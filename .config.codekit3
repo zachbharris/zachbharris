@@ -38,6 +38,15 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/assets\/js\/main-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/main-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/js\/main.js": {
 		"ft": 64,
 		"mi": 1,
