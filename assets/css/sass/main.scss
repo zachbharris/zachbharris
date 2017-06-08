@@ -5,7 +5,13 @@ html, body {
 
 body {
 	min-height: 100%;
-  margin: 0;
+	margin: 0;
+	opacity: 1;
+    transition: 2s opacity;
+	&.fade-out {
+		opacity: 0;
+		transition: none;
+	}
 }
 
 h1, h2, h3 {
@@ -25,22 +31,75 @@ h2 {
 p {
 	margin: 0;
 	font-size: 1.2em;
+	max-width: 300px;
 }
 
 header, section, footer {
+	position: relative;
 	margin: 20px;
 	padding-bottom: 20px;
-	border-bottom: 1px solid black;
-	max-width: 300px;
-	&:last-child {
-		border-bottom: 0;
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: black;
+		max-width: 300px;
+		width: 100%;
+		height: 1px;
+	}
+}
+
+footer {
+	&:after {
+		display: none;
 	}
 }
 
 ul {
 	padding-left: 20px;
 	li {
+		position: relative;
 		margin: 5px 0;
+		span {
+			position: relative;
+			left: 5px;
+			display: inline-block;
+			opacity: 0.4;
+			margin-right: 4px;
+			padding: 2px 6px;
+			border-radius: 5px;
+			color: white;
+			font-size: 0.75em;
+			font-weight: 600;
+			transition: all ease-in 0.15s;
+			&:last-of-type {
+				margin-right: 0;
+			}
+			&.wordpress {
+				background-color: rgba(33, 150, 243,1.0);
+			}
+			&.js {
+				background-color: rgba(255, 235, 59,1.0);
+				color: black;
+				text-transform: uppercase;
+			}
+			&.html {
+				background-color: rgba(245, 124, 0,1.0);
+			}
+			&.php {
+				background-color: rgba(63, 81, 181,1.0);
+			}
+			&.webapp {
+				background-color: rgba(0, 150, 136,1.0);
+			}
+			@media only screen and (min-width: 668px) {
+				position: relative;
+				visibility: hidden;
+				opacity: 0;
+				left: 30px;
+			}
+		}
 	}
 }
 
@@ -51,6 +110,7 @@ a {
 	padding: 5px 0;
 	outline: none;
 	font-style: italic;
+	font-size: 1.2em;
 	&:after {
 		content: '';
 		width: 100%;
@@ -61,13 +121,23 @@ a {
 		left: 0;
 		bottom: 4px;
 		z-index: -1;
-		transition: all ease-in 0.15s;
+		transition: all ease-in 0.1s;
+	}
+	&:hover, &:focus {
+		@media only screen and (min-width: 668px) {
+			& ~ span {
+				visibility: visible;
+				opacity: 1;
+				left: 5px;
+			}
+		}
 	}
 	&:hover:after, &:focus:after {
 		background-color: rgba(79, 195, 247,0.75);
 	}
 	&.disabled {
 		cursor: not-allowed;
+		opacity: .25;
 		&:after {
 			background-color: rgba(211, 47, 47,0.25)
 		}
