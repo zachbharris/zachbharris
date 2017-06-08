@@ -7,7 +7,7 @@ body {
 	min-height: 100%;
 	margin: 0;
 	opacity: 1;
-    transition: 2s opacity;
+  transition: 3s opacity;
 	&.fade-out {
 		opacity: 0;
 		transition: none;
