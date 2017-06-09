@@ -62,6 +62,17 @@
 		"oAP": "\/CNAME",
 		"oF": 0
 		},
+	"\/favicon.png": {
+		"ft": 32768,
+		"iS": 791,
+		"oA": 0,
+		"oAP": "\/favicon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/index.html": {
 		"ft": 8192,
 		"oA": 2,
