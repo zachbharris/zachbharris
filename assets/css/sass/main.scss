@@ -61,11 +61,16 @@ nav, footer {
 	}
 }
 
+footer {
+	font-size: 0.875em;
+}
+
 ul {
 	padding-left: 20px;
 	li {
 		position: relative;
 		margin: 5px 0;
+		font-size: 1.2em;
 	}
 }
 
@@ -89,7 +94,7 @@ a {
 	padding: 5px 0;
 	outline: none;
 	font-style: italic;
-	font-size: 1.2em;
+	font-size: inherit;
 	&:after {
 		content: '';
 		width: 100%;
