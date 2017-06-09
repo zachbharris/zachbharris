@@ -63,6 +63,10 @@ nav, footer {
 
 footer {
 	font-size: 0.875em;
+	p {
+		max-width: none;
+		color: grey;
+	}
 }
 
 ul {
@@ -76,10 +80,6 @@ ul {
 
 nav {
 	display: flex;
-	@media only screen and (max-width: $tablet) {
-		justify-content: center;
-		align-items: center;
-	}
 	a {
 		&:after {
 			display: none;
@@ -90,12 +90,16 @@ nav {
 a {
 	position: relative;
 	display: inline-block;
-	color: black;
+	color: inherit;
 	text-decoration: none;
 	padding: 5px 0;
 	outline: none;
 	font-style: italic;
 	font-size: inherit;
+	transition: color ease-in 0.1s;
+	&:hover, &:focus {
+		color: black;
+	}
 	&:after {
 		content: '';
 		width: 100%;
