@@ -1,4 +1,4 @@
-document.body.className += ' fade-out';
+document.body.className += 'fade-out';
 
 $(function() {
     // fade content in
