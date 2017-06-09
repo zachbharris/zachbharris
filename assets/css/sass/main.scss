@@ -1,3 +1,8 @@
+$desktop: 1440px;
+$laptop: 1024px;
+$tablet: 768px;
+$mobile: 425px;
+
 html, body {
 	font-size: 16px;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -34,7 +39,7 @@ p {
 	max-width: 300px;
 }
 
-header, section, footer {
+nav, header, section, footer {
 	position: relative;
 	margin: 20px;
 	padding-bottom: 20px;
@@ -50,7 +55,7 @@ header, section, footer {
 	}
 }
 
-footer {
+nav, footer {
 	&:after {
 		display: none;
 	}
@@ -61,44 +66,18 @@ ul {
 	li {
 		position: relative;
 		margin: 5px 0;
-		span {
-			position: relative;
-			left: 5px;
-			display: inline-block;
-			opacity: 0.4;
-			margin-right: 4px;
-			padding: 2px 6px;
-			border-radius: 5px;
-			color: white;
-			font-size: 0.75em;
-			font-weight: 600;
-			transition: all ease-in 0.15s;
-			&:last-of-type {
-				margin-right: 0;
-			}
-			&.wordpress {
-				background-color: rgba(33, 150, 243,1.0);
-			}
-			&.js {
-				background-color: rgba(255, 235, 59,1.0);
-				color: black;
-				text-transform: uppercase;
-			}
-			&.html {
-				background-color: rgba(245, 124, 0,1.0);
-			}
-			&.php {
-				background-color: rgba(63, 81, 181,1.0);
-			}
-			&.webapp {
-				background-color: rgba(0, 150, 136,1.0);
-			}
-			@media only screen and (min-width: 668px) {
-				position: relative;
-				visibility: hidden;
-				opacity: 0;
-				left: 30px;
-			}
+	}
+}
+
+nav {
+	display: flex;
+	@media only screen and (max-width: $tablet) {
+		justify-content: center;
+		align-items: center;
+	}
+	a {
+		&:after {
+			display: none;
 		}
 	}
 }
@@ -122,15 +101,6 @@ a {
 		bottom: 4px;
 		z-index: -1;
 		transition: all ease-in 0.1s;
-	}
-	&:hover, &:focus {
-		@media only screen and (min-width: 668px) {
-			& ~ span {
-				visibility: visible;
-				opacity: 1;
-				left: 5px;
-			}
-		}
 	}
 	&:hover:after, &:focus:after {
 		background-color: rgba(79, 195, 247,0.75);
