@@ -1,12 +1,21 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "zachbharris",
+  "description": "Zach Harris' personal portfolio",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Zach Harris <hi@zachbharris.com>",
   "dependencies": {
     "gatsby": "^1.9.247",
+    "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-sass": "^1.0.26",
+    "gatsby-plugin-sharp": "^1.6.46",
+    "gatsby-remark-images": "^1.5.65",
+    "gatsby-source-filesystem": "^1.5.38",
+    "gatsby-transformer-remark": "^1.7.41",
+    "gatsby-transformer-sharp": "^1.6.26",
+    "gatsby-transformer-yaml": "^1.5.17",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -23,7 +32,7 @@
     "prettier": "^1.12.0"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/gatsbyjs/gatsby-starter-default"
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   }
 }
