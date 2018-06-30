@@ -1,4 +1,10 @@
+html, body {
+  margin: 0;
+}
+
 @import 'colors';
 @import 'typography';
 @import 'animations';
 @import 'nav';
+@import 'footer';
+@import 'home';

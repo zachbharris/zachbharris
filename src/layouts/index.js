@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
+import Footer from '../components/footer'
 import Favicon from '../../favicon.png'
 import '../scss/index.scss'
 
@@ -23,12 +24,13 @@ const Layout = ({ children, data }) => (
       style={{
         margin: '0 auto',
         maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
+        padding: '1rem',
         paddingTop: 0,
       }}
     >
       {children()}
     </div>
+    <Footer />
   </div>
 )
 

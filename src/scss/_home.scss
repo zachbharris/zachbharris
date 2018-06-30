@@ -1,0 +1,12 @@
+.work {
+  display: grid;
+  grid-template-areas: "work projects";
+  grid-template-columns: 320px 320px;
+  grid-column-gap: 2rem;
+  section[name="work"] {
+    grid-area: work;
+  }
+  section[name="projects"] {
+    grid-area: projects;
+  }
+}
