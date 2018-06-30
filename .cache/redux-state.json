@@ -1,13 +1,23 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
+      "layout": "index",
+      "jsonName": "dev-404-page.json",
+      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
+      "component": "/Users/Zach/git/zachbharris/.cache/dev-404-page.js",
+      "componentChunkName": "component---cache-dev-404-page-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin dev-404-page",
+      "pluginCreatorId": "Plugin dev-404-page",
+      "componentPath": "/Users/Zach/git/zachbharris/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
+        "contentDigest": "022cbec7433016cb6675717993cfa142",
+        "description": "Plugin dev-404-page",
         "owner": "internal-data-bridge"
       }
     },
@@ -391,595 +401,11 @@
         "owner": "internal-data-bridge"
       }
     },
-    "Plugin gatsby-source-filesystem": {
-      "resolve": "/Users/Zach/git/zachbharris/node_modules/gatsby-source-filesystem",
-      "id": "Plugin gatsby-source-filesystem",
-      "name": "gatsby-source-filesystem",
-      "version": "1.5.39",
-      "pluginOptions": {
-        "plugins": [],
-        "path": "/Users/Zach/git/zachbharris/src/data/"
-      },
-      "nodeAPIs": [
-        "sourceNodes",
-        "setFieldsOnGraphQLNodeType"
-      ],
-      "browserAPIs": [],
-      "ssrAPIs": [],
-      "pluginFilepath": "/Users/Zach/git/zachbharris/node_modules/gatsby-source-filesystem",
-      "packageJson": {
-        "name": "gatsby-source-filesystem",
-        "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
-        "version": "1.5.39",
-        "keywords": [
-          "gatsby",
-          "gatsby-plugin"
-        ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
-        "license": "MIT",
-        "dependencies": [
-          {
-            "name": "babel-cli",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "babel-runtime",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "better-queue",
-            "version": "^3.8.7"
-          },
-          {
-            "name": "bluebird",
-            "version": "^3.5.0"
-          },
-          {
-            "name": "chokidar",
-            "version": "^1.7.0"
-          },
-          {
-            "name": "fs-extra",
-            "version": "^4.0.1"
-          },
-          {
-            "name": "got",
-            "version": "^7.1.0"
-          },
-          {
-            "name": "md5-file",
-            "version": "^3.1.1"
-          },
-          {
-            "name": "mime",
-            "version": "^1.3.6"
-          },
-          {
-            "name": "pretty-bytes",
-            "version": "^4.0.2"
-          },
-          {
-            "name": "slash",
-            "version": "^1.0.0"
-          },
-          {
-            "name": "valid-url",
-            "version": "^1.0.9"
-          }
-        ],
-        "devDependencies": [
-          {
-            "name": "cross-env",
-            "version": "^5.0.5"
-          }
-        ],
-        "peerDependencies": [
-          {
-            "name": "gatsby",
-            "version": "^1.9.250"
-          }
-        ],
-        "optionalDependecies": [],
-        "bundledDependecies": []
-      },
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "contentDigest": "17065845f0002843266e6c1c2d3850b3",
-        "type": "SitePlugin",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "Plugin gatsby-transformer-remark": {
-      "resolve": "/Users/Zach/git/zachbharris/node_modules/gatsby-transformer-remark",
-      "id": "Plugin gatsby-transformer-remark",
-      "name": "gatsby-transformer-remark",
-      "version": "1.7.44",
-      "pluginOptions": {
-        "plugins": [
-          {
-            "resolve": "/Users/Zach/git/zachbharris/node_modules/gatsby-remark-images",
-            "id": "Plugin gatsby-remark-images",
-            "name": "gatsby-remark-images",
-            "version": "1.5.67",
-            "pluginOptions": {
-              "plugins": []
-            },
-            "nodeAPIs": [],
-            "browserAPIs": [],
-            "ssrAPIs": [],
-            "pluginFilepath": "/Users/Zach/git/zachbharris/node_modules/gatsby-remark-images"
-          }
-        ]
-      },
-      "nodeAPIs": [
-        "onCreateNode",
-        "setFieldsOnGraphQLNodeType"
-      ],
-      "browserAPIs": [],
-      "ssrAPIs": [],
-      "pluginFilepath": "/Users/Zach/git/zachbharris/node_modules/gatsby-transformer-remark",
-      "packageJson": {
-        "name": "gatsby-transformer-remark",
-        "description": "Gatsby transformer plugin for Markdown using the Remark library and ecosystem",
-        "version": "1.7.44",
-        "keywords": [
-          "gatsby",
-          "gatsby-plugin",
-          "markdown",
-          "remark"
-        ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
-        "license": "MIT",
-        "dependencies": [
-          {
-            "name": "babel-runtime",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "bluebird",
-            "version": "^3.5.0"
-          },
-          {
-            "name": "graphql-type-json",
-            "version": "^0.1.4"
-          },
-          {
-            "name": "gray-matter",
-            "version": "^3.0.0"
-          },
-          {
-            "name": "hast-util-raw",
-            "version": "^2.0.2"
-          },
-          {
-            "name": "hast-util-to-html",
-            "version": "^3.0.0"
-          },
-          {
-            "name": "lodash",
-            "version": "^4.17.4"
-          },
-          {
-            "name": "mdast-util-to-hast",
-            "version": "^2.4.0"
-          },
-          {
-            "name": "mdast-util-toc",
-            "version": "^2.0.1"
-          },
-          {
-            "name": "remark",
-            "version": "^7.0.1"
-          },
-          {
-            "name": "remark-parse",
-            "version": "^4.0.0"
-          },
-          {
-            "name": "remark-retext",
-            "version": "^3.1.0"
-          },
-          {
-            "name": "remark-stringify",
-            "version": "^4.0.0"
-          },
-          {
-            "name": "retext-english",
-            "version": "^3.0.0"
-          },
-          {
-            "name": "sanitize-html",
-            "version": "^1.14.1"
-          },
-          {
-            "name": "underscore.string",
-            "version": "^3.3.4"
-          },
-          {
-            "name": "unified",
-            "version": "^6.1.5"
-          },
-          {
-            "name": "unist-util-remove-position",
-            "version": "^1.1.1"
-          },
-          {
-            "name": "unist-util-select",
-            "version": "^1.5.0"
-          },
-          {
-            "name": "unist-util-visit",
-            "version": "^1.1.1"
-          }
-        ],
-        "devDependencies": [
-          {
-            "name": "babel-cli",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "babel-plugin-transform-object-rest-spread",
-            "version": "^6.20.2"
-          },
-          {
-            "name": "cross-env",
-            "version": "^5.0.5"
-          }
-        ],
-        "peerDependencies": [],
-        "optionalDependecies": [],
-        "bundledDependecies": []
-      },
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "contentDigest": "585a2d43935b61578b8150a3843f24b7",
-        "type": "SitePlugin",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "Plugin gatsby-remark-images": {
-      "resolve": "/Users/Zach/git/zachbharris/node_modules/gatsby-remark-images",
-      "id": "Plugin gatsby-remark-images",
-      "name": "gatsby-remark-images",
-      "version": "1.5.67",
-      "pluginOptions": {
-        "plugins": []
-      },
-      "nodeAPIs": [],
-      "browserAPIs": [],
-      "ssrAPIs": [],
-      "pluginFilepath": "/Users/Zach/git/zachbharris/node_modules/gatsby-remark-images",
-      "packageJson": {
-        "name": "gatsby-remark-images",
-        "description": "Processes images in markdown so they can be used in the production build.",
-        "version": "1.5.67",
-        "main": "index.js",
-        "keywords": [
-          "gatsby",
-          "gatsby-plugin",
-          "image",
-          "markdown",
-          "remark",
-          "responsive images"
-        ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
-        "license": "MIT",
-        "dependencies": [
-          {
-            "name": "babel-runtime",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "cheerio",
-            "version": "^1.0.0-rc.2"
-          },
-          {
-            "name": "gatsby-plugin-sharp",
-            "version": "^1.6.48"
-          },
-          {
-            "name": "is-relative-url",
-            "version": "^2.0.0"
-          },
-          {
-            "name": "lodash",
-            "version": "^4.17.4"
-          },
-          {
-            "name": "slash",
-            "version": "^1.0.0"
-          },
-          {
-            "name": "unist-util-select",
-            "version": "^1.5.0"
-          }
-        ],
-        "devDependencies": [
-          {
-            "name": "babel-cli",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "cross-env",
-            "version": "^5.0.5"
-          }
-        ],
-        "peerDependencies": [],
-        "optionalDependecies": [],
-        "bundledDependecies": []
-      },
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "contentDigest": "e9a80f7eafd77c3a56ab84f2a283b24c",
-        "type": "SitePlugin",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "Plugin gatsby-transformer-sharp": {
-      "resolve": "/Users/Zach/git/zachbharris/node_modules/gatsby-transformer-sharp",
-      "id": "Plugin gatsby-transformer-sharp",
-      "name": "gatsby-transformer-sharp",
-      "version": "1.6.27",
-      "pluginOptions": {
-        "plugins": []
-      },
-      "nodeAPIs": [
-        "onCreateNode",
-        "setFieldsOnGraphQLNodeType",
-        "onPreExtractQueries"
-      ],
-      "browserAPIs": [],
-      "ssrAPIs": [],
-      "pluginFilepath": "/Users/Zach/git/zachbharris/node_modules/gatsby-transformer-sharp",
-      "packageJson": {
-        "name": "gatsby-transformer-sharp",
-        "description": "Gatsby transformer plugin for images using Sharp",
-        "version": "1.6.27",
-        "keywords": [
-          "gatsby",
-          "gatsby-plugin",
-          "image",
-          "sharp"
-        ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
-        "license": "MIT",
-        "dependencies": [
-          {
-            "name": "babel-runtime",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "bluebird",
-            "version": "^3.5.0"
-          },
-          {
-            "name": "fs-extra",
-            "version": "^4.0.2"
-          },
-          {
-            "name": "probe-image-size",
-            "version": "^4.0.0"
-          }
-        ],
-        "devDependencies": [
-          {
-            "name": "babel-cli",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "cross-env",
-            "version": "^5.0.5"
-          }
-        ],
-        "peerDependencies": [],
-        "optionalDependecies": [],
-        "bundledDependecies": []
-      },
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "contentDigest": "cae668a53f7e06ba3a4361039133fd03",
-        "type": "SitePlugin",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "Plugin gatsby-plugin-sharp": {
-      "resolve": "/Users/Zach/git/zachbharris/node_modules/gatsby-plugin-sharp",
-      "id": "Plugin gatsby-plugin-sharp",
-      "name": "gatsby-plugin-sharp",
-      "version": "1.6.48",
-      "pluginOptions": {
-        "plugins": []
-      },
-      "nodeAPIs": [],
-      "browserAPIs": [],
-      "ssrAPIs": [],
-      "pluginFilepath": "/Users/Zach/git/zachbharris/node_modules/gatsby-plugin-sharp",
-      "packageJson": {
-        "name": "gatsby-plugin-sharp",
-        "description": "Wrapper of the Sharp image manipulation library for Gatsby plugins",
-        "version": "1.6.48",
-        "main": "index.js",
-        "keywords": [
-          "gatsby",
-          "gatsby-plugin",
-          "image",
-          "sharp"
-        ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
-        "license": "MIT",
-        "dependencies": [
-          {
-            "name": "async",
-            "version": "^2.1.2"
-          },
-          {
-            "name": "babel-runtime",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "bluebird",
-            "version": "^3.5.0"
-          },
-          {
-            "name": "imagemin",
-            "version": "^5.2.2"
-          },
-          {
-            "name": "imagemin-pngquant",
-            "version": "5.0.1"
-          },
-          {
-            "name": "imagemin-webp",
-            "version": "^4.0.0"
-          },
-          {
-            "name": "lodash",
-            "version": "^4.17.4"
-          },
-          {
-            "name": "mini-svg-data-uri",
-            "version": "^1.0.0"
-          },
-          {
-            "name": "potrace",
-            "version": "^2.1.1"
-          },
-          {
-            "name": "probe-image-size",
-            "version": "^4.0.0"
-          },
-          {
-            "name": "progress",
-            "version": "^1.1.8"
-          },
-          {
-            "name": "sharp",
-            "version": "^0.20.0"
-          },
-          {
-            "name": "svgo",
-            "version": "^0.7.2"
-          }
-        ],
-        "devDependencies": [
-          {
-            "name": "babel-cli",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "cross-env",
-            "version": "^5.0.5"
-          }
-        ],
-        "peerDependencies": [
-          {
-            "name": "gatsby",
-            "version": "^1.0.0"
-          }
-        ],
-        "optionalDependecies": [],
-        "bundledDependecies": []
-      },
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "contentDigest": "4cfdb0dc11cd3775e5449dfd53856b18",
-        "type": "SitePlugin",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "Plugin gatsby-transformer-yaml": {
-      "resolve": "/Users/Zach/git/zachbharris/node_modules/gatsby-transformer-yaml",
-      "id": "Plugin gatsby-transformer-yaml",
-      "name": "gatsby-transformer-yaml",
-      "version": "1.5.18",
-      "pluginOptions": {
-        "plugins": []
-      },
-      "nodeAPIs": [
-        "onCreateNode"
-      ],
-      "browserAPIs": [],
-      "ssrAPIs": [],
-      "pluginFilepath": "/Users/Zach/git/zachbharris/node_modules/gatsby-transformer-yaml",
-      "packageJson": {
-        "name": "gatsby-transformer-yaml",
-        "description": "Gatsby transformer plugin for yaml",
-        "version": "1.5.18",
-        "keywords": [
-          "gatsby",
-          "gatsby-plugin",
-          "yaml"
-        ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
-        "license": "MIT",
-        "dependencies": [
-          {
-            "name": "babel-runtime",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "js-yaml",
-            "version": "3.7.0"
-          },
-          {
-            "name": "lodash",
-            "version": "^4.17.4"
-          },
-          {
-            "name": "unist-util-select",
-            "version": "^1.5.0"
-          }
-        ],
-        "devDependencies": [
-          {
-            "name": "babel-cli",
-            "version": "^6.26.0"
-          },
-          {
-            "name": "cross-env",
-            "version": "^5.0.5"
-          }
-        ],
-        "peerDependencies": [],
-        "optionalDependecies": [],
-        "bundledDependecies": []
-      },
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "contentDigest": "be5ddc1e43ee5267ce1c8567d5864bf7",
-        "type": "SitePlugin",
-        "owner": "internal-data-bridge"
-      }
-    },
     "Plugin default-site-plugin": {
       "resolve": "/Users/Zach/git/zachbharris",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "e58e9b03a6fb905c676f3a872741f9dd",
+      "version": "718510dcfb0395485d40ac4ce576e8fa",
       "pluginOptions": {
         "plugins": []
       },
@@ -1063,7 +489,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "a17a492b74d515fc4f8c72563cd56b4e",
+        "contentDigest": "9a283146792ae8a93a11c949d006b090",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1072,105 +498,19 @@
       "siteMetadata": {
         "title": "Zach B. Harris"
       },
+      "port": "8000",
+      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-30T01:53:15.125Z",
+      "buildTime": "2018-06-30T01:54:52.110Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "45db5db30e30d94674e6bf812524f38c",
+        "contentDigest": "e6391d86ea8722a43a71b7c650b20785",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
-    },
-    "/Users/Zach/git/zachbharris/src/posts absPath of file": {
-      "id": "/Users/Zach/git/zachbharris/src/posts absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "62b72195a9a33b5e8032ae1abc74e01a",
-        "type": "Directory",
-        "description": "Directory \"src/posts\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "posts",
-      "absolutePath": "/Users/Zach/git/zachbharris/src/posts",
-      "relativePath": "",
-      "extension": "",
-      "size": 64,
-      "prettySize": "64 B",
-      "modifiedTime": "2018-06-29T19:39:16.491Z",
-      "accessTime": "2018-06-30T01:53:19.011Z",
-      "changeTime": "2018-06-29T19:39:16.491Z",
-      "birthTime": "2018-06-29T19:39:16.491Z",
-      "root": "/",
-      "dir": "/Users/Zach/git/zachbharris/src",
-      "base": "posts",
-      "ext": "",
-      "name": "posts",
-      "relativeDirectory": "..",
-      "dev": 16777220,
-      "mode": 16877,
-      "nlink": 2,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 8597177056,
-      "blocks": 0,
-      "atimeMs": 1530323599011.2488,
-      "mtimeMs": 1530301156490.5105,
-      "ctimeMs": 1530301156490.5105,
-      "birthtimeMs": 1530301156490.5105,
-      "atime": "2018-06-30T01:53:19.011Z",
-      "mtime": "2018-06-29T19:39:16.491Z",
-      "ctime": "2018-06-29T19:39:16.491Z",
-      "birthtime": "2018-06-29T19:39:16.491Z"
-    },
-    "/Users/Zach/git/zachbharris/src/data/ absPath of file": {
-      "id": "/Users/Zach/git/zachbharris/src/data/ absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "b02f4df46aede687ada78c3b4aa26c50",
-        "type": "Directory",
-        "description": "Directory \"src/data\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "__PROGRAMATTIC__",
-      "absolutePath": "/Users/Zach/git/zachbharris/src/data/",
-      "relativePath": "",
-      "extension": "",
-      "size": 64,
-      "prettySize": "64 B",
-      "modifiedTime": "2018-06-29T19:39:31.274Z",
-      "accessTime": "2018-06-30T01:53:19.018Z",
-      "changeTime": "2018-06-29T19:39:31.274Z",
-      "birthTime": "2018-06-29T19:39:31.274Z",
-      "root": "/",
-      "dir": "/Users/Zach/git/zachbharris/src",
-      "base": "data",
-      "ext": "",
-      "name": "data",
-      "relativeDirectory": "..",
-      "dev": 16777220,
-      "mode": 16877,
-      "nlink": 2,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 8597177106,
-      "blocks": 0,
-      "atimeMs": 1530323599018.319,
-      "mtimeMs": 1530301171274.2395,
-      "ctimeMs": 1530301171274.2395,
-      "birthtimeMs": 1530301171274.2395,
-      "atime": "2018-06-30T01:53:19.018Z",
-      "mtime": "2018-06-29T19:39:31.274Z",
-      "ctime": "2018-06-29T19:39:31.274Z",
-      "birthtime": "2018-06-29T19:39:31.274Z"
     },
     "SitePage /404/": {
       "layout": "index",
@@ -1188,7 +528,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "dd2e24e698e0a9efb5e026dfd6c81297",
+        "contentDigest": "91022ace8d6716ca6a4b5d5d6120fb44",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1209,7 +549,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "c81ca276087699ef5682b5c1cb0c67f9",
+        "contentDigest": "a84ee6a8e0723693113081a3be1e034e",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1230,7 +570,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "50a5e22ddc40fd9df2c127b00a795191",
+        "contentDigest": "2d8b04acaf3547ebca295c7be7fba30b",
         "description": "Plugin prod-404",
         "owner": "internal-data-bridge"
       }
@@ -1238,7 +578,7 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "92e1eff4c7ab687e47d032116493f541"
+    "PLUGINS_HASH": "6aea13dc3be02ce6b3ca4aed84add48b"
   },
   "componentDataDependencies": {
     "nodes": {
