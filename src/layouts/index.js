@@ -20,7 +20,7 @@ const Layout = ({ children, data }) => (
         { rel: 'icon', href: `${Favicon}` }
       ]}
     />
-    <Alert alertContent='Hi there! zachbharris.com is currently under-going a redesign. If something is broken, it will be fixed shortly!' />
+    <Alert alertContent='Hi there! zachbharris.com is currently undergoing a redesign. If something is broken, it will be fixed shortly!' />
     <Header siteTitle={data.site.siteMetadata.title} />
     <div
       style={{
