@@ -8,3 +8,16 @@ html, body {
 @import 'nav';
 @import 'footer';
 @import 'home';
+
+.alert {
+  background-color: $purple;
+  padding: 0.5rem;
+  text-align: center;
+  p {
+    max-width: 960px;
+    width: 100%;
+    color: white;
+    margin: 0 auto;
+    font-style: normal;
+  }
+}
