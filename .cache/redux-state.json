@@ -500,14 +500,12 @@
       },
       "port": "8000",
       "host": "localhost",
-      "pathPrefix": "",
-      "polyfill": true,
       "buildTime": "2018-07-02T18:28:23.392Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "8e071933426f8895bbfc2192dcd89cb6",
+        "contentDigest": "cdbbc05b855b58d9151b9acca5ab7b1e",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
