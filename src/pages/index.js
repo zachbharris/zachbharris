@@ -15,6 +15,7 @@ const IndexPage = () => (
         <a className="btn purple outline-purple" href="https://mconnectedlab.com" target="_blank" rel="noopener noreferrer">M Connected Labs</a>
         <a className="btn purple outline-purple" href="http://covermissouri.org" target="_blank" rel="noopener noreferrer">Cover Missouri</a>
         <a className="btn purple outline-purple" href="http://emersontopquartile.com" target="_blank" rel="noopener noreferrer">Emerson Top Quartile</a>
+        <a className="btn purple outline-purple" href="https://icubecalculator.com" target="_blank" rel="noopener noreferrer">Intermatic Calculator</a>
         <a className="btn purple outline-purple" href="https://linxup.com" target="_blank" rel="noopener noreferrer">Linxup</a>
         <a className="btn purple outline-purple" href="https://awaregps.com" target="_blank" rel="noopener noreferrer">AwareGPS</a>
         <a className="btn purple outline-purple" href="https://commandgps.com" target="_blank" rel="noopener noreferrer">CommandGPS</a>
