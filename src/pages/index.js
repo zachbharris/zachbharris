@@ -1,25 +1,32 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Hero from '../components/hero'
 
 const IndexPage = () => (
-  <div className="work">
-    <section name="work">
+  <div>
+    <Hero
+      heroTitle="InTune"
+      heroDesc="As a beginner guitarist learning different tunings is important and I wanted to create a tool that was simple and straight to the point."
+      heroLink="https://intune.zachbharris.com"
+    />
+    <section name="work" className="work">
       <h2>Work</h2>
-      <ul>
-        <li><a href="https://mconnectedlab.com" target="_blank" rel="noopener">M Connected Lab</a></li>
-        <li><a href="http://emersontopquartile.com" target="_blank" rel="noopener">Emerson</a></li>
-        <li><a href="http://covermissouri.org" target="_blank" rel="noopener">Cover Missouri</a></li>
-        <li><a href="https://linxup.com" target="_blank" rel="noopener">Linxup</a></li>
-        <li><a href="https://awaregps.com" target="_blank" rel="noopener">AwareGPS</a></li>
-        <li><a href="https://www.commandgps.com/sprint/order.html" target="_blank" rel="noopener">CommandGPS</a></li>
-      </ul>
+      <div className="items">
+        <a className="btn purple outline-purple" href="https://mconnectedlab.com" target="_blank" rel="noopener noreferrer">M Connected Labs</a>
+        <a className="btn purple outline-purple" href="http://covermissouri.org" target="_blank" rel="noopener noreferrer">Cover Missouri</a>
+        <a className="btn purple outline-purple" href="http://emersontopquartile.com" target="_blank" rel="noopener noreferrer">Emerson Top Quartile</a>
+        <a className="btn purple outline-purple" href="https://linxup.com" target="_blank" rel="noopener noreferrer">Linxup</a>
+        <a className="btn purple outline-purple" href="https://awaregps.com" target="_blank" rel="noopener noreferrer">AwareGPS</a>
+        <a className="btn purple outline-purple" href="https://commandgps.com" target="_blank" rel="noopener noreferrer">CommandGPS</a>
+      </div>
     </section>
-    <section name="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="https://intune.zachbharris.com" target="_blank" rel="noopener">InTune</a></li>
-        <li><a href="https://strumeasy.com" target="_blank" rel="noopener">StrumEasy</a></li>
-      </ul>
+    <section name="projects" className="work">
+      <h2>Personal Projects</h2>
+      <div className="items">
+        <a className="btn purple outline-purple" href="https://intune.zachbharris.com" target="_blank" rel="noopener noreferrer">InTune</a>
+        <a className="btn purple outline-purple" href="https://strumeasy.com" target="_blank" rel="noopener noreferrer">StrumEasy</a>
+        <a className="btn purple outline-purple" href="https://codepen.io/zachbharris/pen/mLgJOv" target="_blank" rel="noopener noreferrer">Twitch API</a>
+      </div>
     </section>
   </div>
 )

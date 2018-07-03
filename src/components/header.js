@@ -3,12 +3,8 @@ import Link from 'gatsby-link'
 
 const Header = ({ siteTitle }) => (
   <nav>
-    <div className="logo">
-      <Link to="/">ZBH</Link>
-    </div>
-    <div className="contact">
-      <a href="mailto:hi@zachbharris.com">Say Hello 👋</a>
-    </div>
+    <Link className="logo link black" to="/"><h1>ZBH</h1></Link>
+    <a className="contact btn btn-header purple bg-purple white" href="mailto:hi@zachbharris.com">Say Hello</a>
   </nav>
 )
 

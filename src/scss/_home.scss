@@ -1,12 +1,15 @@
 .work {
-  display: grid;
-  grid-template-areas: "work projects";
-  grid-template-columns: 320px 320px;
-  grid-column-gap: 2rem;
-  section[name="work"] {
-    grid-area: work;
+  margin: 1rem 0;
+  h2 {
+    margin: 1rem 0;
   }
-  section[name="projects"] {
-    grid-area: projects;
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    a {
+      margin: 0 0.5rem 0.5rem 0;
+    }
   }
 }

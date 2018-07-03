@@ -2,22 +2,25 @@ html, body {
   margin: 0;
 }
 
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 @import 'colors';
 @import 'typography';
+@import 'buttons';
 @import 'animations';
-@import 'nav';
+@import 'header';
 @import 'footer';
+@import 'hero';
 @import 'home';
 
-.alert {
-  background-color: $purple;
-  padding: 0.5rem;
-  text-align: center;
-  p {
-    max-width: 960px;
-    width: 100%;
-    color: white;
-    margin: 0 auto;
-    font-style: normal;
-  }
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

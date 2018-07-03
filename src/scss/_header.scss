@@ -1,0 +1,13 @@
+nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin: 0;
+  padding: 1rem 0;
+  .logo {
+    justify-self: start;
+  }
+  .contact {
+    justify-self: end;
+  }
+}
