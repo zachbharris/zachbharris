@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 function Cursor(props: CursorProps) {
-    return <span {...props} />
+  return <span {...props} />
 }
 
 const blink = keyframes`
@@ -15,11 +15,11 @@ const blink = keyframes`
 `
 
 const StyledCursor = styled(Cursor)`
-    display: block;
-    height: 100%;
-    width: 1rem;
-    background-color: var(--soul-black);
-    animation: 1s ${blink} step-end infinite;
+  display: block;
+  height: 100%;
+  width: 1rem;
+  background-color: var(--soul-black);
+  animation: 1s ${blink} step-end infinite;
 `
 
 export default StyledCursor
