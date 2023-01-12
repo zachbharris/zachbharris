@@ -3,6 +3,7 @@ import Paragraph from './Paragraph'
 import { Block as TBlock } from '../../../typings'
 import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import Heading from './Heading'
+import Image from './Image'
 
 type BlockProps = {
   block: TBlock 
@@ -23,6 +24,8 @@ export default function Block({ block }: BlockProps) {
       case 'heading_2':
       case 'heading_3':
         return <Heading block={blockObj} />
+      case 'image':
+        return <Image block={blockObj} />
     }
   }
 }

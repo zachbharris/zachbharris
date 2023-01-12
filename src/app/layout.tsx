@@ -12,9 +12,12 @@ export default function RootLayout({
       <head>
         <title>Zach Harris</title>
       </head>
-      <body>
+      <body className="bg-white dark:bg-slate-900">
         <Header />
-        {children}
+        
+        <div className="p-4">
+          {children}
+        </div>
       </body>
     </html>
   );

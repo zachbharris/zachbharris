@@ -21,8 +21,6 @@ const fetchPost = async (slug: string) => {
     notFound()
   }
 
-  console.log(JSON.stringify(page, null, 2))
-
   const post = await notion.pages.retrieve({
     page_id: page.results[0].id
   })
@@ -38,7 +36,6 @@ async function Page({ params }) {
 
   return (
     <>
-      <p>Post</p>
       <Blocks blocks={blocks} />
     </>
   )

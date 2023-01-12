@@ -1,7 +1,7 @@
 import { Client } from '@notionhq/client'
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import Link from 'next/link'
-import { Suspense } from 'react'
+import { getFileURL } from '../../lib/files'
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
@@ -24,38 +24,38 @@ async function Page() {
   const posts = await fetchPosts()
 
   return (<>
-  <p>Blog Posts</p>
-
-
-    <Suspense fallback={<p>Loading...</p>}>
-      {posts.results.map((post: PageObjectResponse) => {
-        const properties = {
-          title: '',
-          slug: ''
-        }
-
-        for (const [key, value] of Object.entries(post.properties)) {
-          switch (value.type) {
-            case 'title': {
-              properties.title = value.title[0].plain_text
-              break
-            }
-            case 'rich_text': {
-              if (key.toLowerCase() === 'slug' && value.rich_text.length > 0) {
-                properties.slug = value.rich_text[0].plain_text
-              }
-              break
-            }
-
-          }
-        }
-
-        return (
-          <Link href={`/blog/${properties.slug}`}>{properties.title}</Link>
-        )
-      })}
-    </Suspense>
+      {posts.results.map((post: PageObjectResponse) => <Post post={post} />)}
   </>)
 }
 
 export default Page
+
+type PostProps = {
+  post: PageObjectResponse
+}
+
+function Post({ post }: PostProps) {
+  const slug = post.properties['Slug'].type === 'rich_text'
+    ? post.properties['Slug'].rich_text[0].plain_text
+    : undefined
+
+  if (!slug) return null
+
+  const title = post.properties['Name'].type === 'title'
+    ? post.properties['Name'].title[0].plain_text
+    : undefined
+
+  if (!title) return null
+
+  const thumbnail = getFileURL(post.properties['Thumbnail'])
+
+  return (
+    <Link href={`/blog/${slug}`} className="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={thumbnail} alt="" />
+      <div className="flex flex-col justify-between p-4 leading-normal">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+      </div>
+    </Link>
+  )
+}
