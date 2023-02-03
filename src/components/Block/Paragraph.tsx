@@ -6,7 +6,7 @@ type ParagraphProps = {
 }
 
 export default function Paragraph({ block }: ParagraphProps) {
-  return <p>{block.paragraph.rich_text.map((item, index) => (
+  return <p className="my-2">{block.paragraph.rich_text.map((item, index) => (
     <Text key={`${block.id}-${index}`} text={item} />
   ))}</p>
 }

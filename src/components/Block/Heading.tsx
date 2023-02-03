@@ -13,11 +13,11 @@ export default function Heading({ block }: Props) {
   const className = useMemo(() => {
     switch (type) {
       case 'heading_1':
-        return 'text-3xl'
+        return 'text-3xl mb-4 mt-6'
       case 'heading_2':
-        return 'text-2xl'
+        return 'text-2xl mb-4 mt-6'
       case 'heading_3':
-        return 'text-xl'
+        return 'text-xl mb-4 mt-6'
     }
   }, [type])
 

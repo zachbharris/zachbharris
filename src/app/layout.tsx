@@ -12,7 +12,7 @@ export default function RootLayout({
       <head>
         <title>Zach Harris</title>
       </head>
-      <body className="bg-white dark:bg-slate-900">
+      <body className="bg-white dark:bg-black">
         <Header />
         
         <div className="p-4">
