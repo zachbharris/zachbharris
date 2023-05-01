@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import "../styles/globals.css";
+import { Providers } from "./providers";
 
 export const metadata = {
   title: "Zach Harris",
@@ -12,10 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <body className="bg-slate-50 text-black dark:bg-slate-950 dark:text-white">
-        <Navigation />
-        {children}
+    <html suppressHydrationWarning>
+      <body className="bg-white dark:bg-zinc-950 text-black  dark:text-white mt-16">
+        <Providers>
+          <Navigation />
+
+          {children}
+        </Providers>
       </body>
     </html>
   );

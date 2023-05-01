@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/zachbharris/zachbharris#readme",
   "dependencies": {
+    "@heroicons/react": "^2.0.17",
     "@notionhq/client": "^2.2.4",
+    "@react-hooks-library/core": "^0.5.1",
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
@@ -36,6 +38,7 @@
     "framer-motion": "^10.12.4",
     "lucide-react": "^0.187.0",
     "next": "13.3.1",
+    "next-themes": "^0.2.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -45,6 +48,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@svgr/webpack": "^7.0.0"
+    "@svgr/webpack": "^7.0.0",
+    "notion-types": "^6.16.0"
   }
 }
