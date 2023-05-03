@@ -1,6 +1,5 @@
 import { notion, NOTION_WORK_DATABASE_ID } from "@/utils/notion";
 import dayjs from "dayjs";
-import Link from "next/link";
 
 const WorkPage = async ({ params: { slug = "" } }) => {
   const query = await notion.databases.query({
