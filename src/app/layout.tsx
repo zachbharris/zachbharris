@@ -18,7 +18,7 @@ export default function RootLayout({
         <Providers>
           <Navigation />
 
-          {children}
+          <div className="px-4">{children}</div>
         </Providers>
       </body>
     </html>

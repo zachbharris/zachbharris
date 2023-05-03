@@ -2,18 +2,22 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 md:p-0 mt-8">
+    <div className="w-full max-w-4xl mx-auto pt-8 md:pt-0">
       <section className="flex flex-col md:my-48">
-        <h1 className="font-sans max-w-2xl text-zinc-900 dark:text-white">
+        <h1 className="font-sans max-w-xl text-zinc-900 dark:text-white">
           <span className="block text-xl md:text-2xl font-medium">
             Hey, I&apos;m Zach <span className="inline-block">👋</span>
           </span>
           <span className="block text-4xl md:text-4xl font-bold mt-2 mb-4">
             I&apos;m a{" "}
-            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-400">
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-400 whitespace-nowrap">
               Software Engineer
             </span>{" "}
-            based in St. Louis.
+            based in{" "}
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-yellow-400 whitespace-nowrap">
+              St. Louis
+            </span>
+            .
           </span>
         </h1>
 
