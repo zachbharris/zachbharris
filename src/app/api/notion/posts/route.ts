@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import getBlogPosts from "./getPosts"
+import getBlogPosts from "@/lib/getBlogPosts"
 
 export async function GET(req: NextRequest) {
   const start_cursor = req.nextUrl.searchParams.get('cursor')
