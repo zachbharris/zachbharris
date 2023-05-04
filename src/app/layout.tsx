@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import "../styles/globals.css";
 import { Providers } from "./providers";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Zach Harris",
@@ -19,6 +20,8 @@ export default function RootLayout({
           <Navigation />
 
           <div className="px-4">{children}</div>
+
+          <Footer />
         </Providers>
       </body>
     </html>

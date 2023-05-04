@@ -1,4 +1,4 @@
-import { notion, NOTION_WORK_DATABASE_ID } from "@/utils/notion";
+import { notion, NOTION_WORK_DATABASE_ID } from "@/lib/notion";
 import dayjs from "dayjs";
 
 const WorkPage = async ({ params: { slug = "" } }) => {

@@ -1,6 +1,8 @@
 import Link from "next/link";
+import dayjs from "dayjs";
+import Posts from "@/components/BlogPostList";
 
-export default function Page() {
+export default async function Page() {
   return (
     <div className="w-full max-w-4xl mx-auto pt-8 md:pt-0">
       <section className="flex flex-col md:my-48">
@@ -53,6 +55,12 @@ export default function Page() {
             </svg>
           </Link>
         </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="font-bold text-2xl mb-8">Log</h2>
+
+        <Posts enableInfiniteScroll />
       </section>
     </div>
   );

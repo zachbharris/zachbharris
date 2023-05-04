@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { NOTION_WORK_DATABASE_ID, notion } from "@/utils/notion";
+import { NOTION_WORK_DATABASE_ID, notion } from "@/lib/notion";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import {
