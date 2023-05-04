@@ -7,9 +7,13 @@ export default async function getPost(type: 'page' | 'blocks', slug: string) {
       property: 'Slug',
       rich_text: {
         equals: slug
-      }
+      },
     }
   })
+
+  if (!page.results.length) {
+    return null
+  }
 
   const id = page.results[0].id
 

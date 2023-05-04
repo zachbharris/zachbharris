@@ -1,8 +1,8 @@
 'use client'
 
-import { useInfiniteQuery } from '@tanstack/react-query'
+import { QueryKey, useInfiniteQuery } from '@tanstack/react-query'
 
-async function fetchPosts({ pageParam }: { pageParam?: string | undefined }) {
+async function fetchPosts({ pageParam }: { pageParam?: string | undefined, queryKey: QueryKey }) {
   const url = new URL(`/api/notion/posts`, window.location.origin)
   const params = new URLSearchParams()
 

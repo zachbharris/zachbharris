@@ -36,9 +36,13 @@ export default function BlogPostList({ enableInfiniteScroll }: Props) {
           <Fragment key={`page=${index}`}>
             {page?.results?.map((post: any) => {
               const name = post.properties?.Name.title[0].plain_text;
-              const subtitle =
-                post.properties?.Subtitle.rich_text[0]?.plain_text;
-              const date = dayjs(post.properties?.Published.date?.start).format(
+              const description =
+                post.properties?.Description.rich_text[0]?.plain_text;
+
+              const publishedDate = post.properties?.Published.date?.start;
+              const createdDate = post.created_time;
+
+              const date = dayjs(publishedDate ?? createdDate).format(
                 "MMM D YYYY"
               );
               const slug = post.properties?.Slug.rich_text[0]?.plain_text;
@@ -52,7 +56,7 @@ export default function BlogPostList({ enableInfiniteScroll }: Props) {
                     {name}
                   </h3>
                   <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                    {subtitle}
+                    {description}
                   </p>
                 </Link>
               );

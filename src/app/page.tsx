@@ -1,10 +1,9 @@
 import Link from "next/link";
-import dayjs from "dayjs";
 import Posts from "@/components/BlogPostList";
 
 export default async function Page() {
   return (
-    <div className="w-full max-w-4xl mx-auto pt-8 md:pt-0">
+    <div className="relative w-full max-w-4xl mx-auto pt-8 md:pt-0">
       <section className="flex flex-col md:my-48">
         <h1 className="font-sans max-w-xl text-zinc-900 dark:text-white">
           <span className="block text-xl md:text-2xl font-medium">
@@ -27,7 +26,7 @@ export default async function Page() {
           <Link
             href="https://twitter.com/zachbharris"
             target="_blank"
-            className="h-8 w-8 fill-zinc-800 p-2 rounded-full hover:bg-zinc-100 dark:fill-zinc-100 dark:hover:bg-zinc-800"
+            className="h-10 md:h-8 w-10 md:w-8 fill-zinc-800 p-2 rounded-full hover:bg-zinc-100 dark:fill-zinc-100 dark:hover:bg-zinc-800"
             title="Zach Harris' Twitter profile"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -37,7 +36,7 @@ export default async function Page() {
           <Link
             href="https://linkedin.com/in/zachbharris"
             target="_blank"
-            className="h-8 w-8 fill-zinc-800 p-2 rounded-full hover:bg-zinc-200 dark:fill-zinc-100 dark:hover:bg-zinc-800"
+            className="h-10 md:h-8 w-10 md:w-8 fill-zinc-800 p-2 rounded-full hover:bg-zinc-200 dark:fill-zinc-100 dark:hover:bg-zinc-800"
             title="Zach Harris' LinkedIn profile"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -47,7 +46,7 @@ export default async function Page() {
           <Link
             href="https://github.com/zachbharris"
             target="_blank"
-            className="h-8 w-8 fill-zinc-800 p-2 rounded-full hover:bg-zinc-200 dark:fill-zinc-100 dark:hover:bg-zinc-800"
+            className="h-10 md:h-8 w-10 md:w-8 fill-zinc-800 p-2 rounded-full hover:bg-zinc-200 dark:fill-zinc-100 dark:hover:bg-zinc-800"
             title="Zach Harris' GitHub profile"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -58,7 +57,7 @@ export default async function Page() {
       </section>
 
       <section className="mt-16">
-        <h2 className="font-bold text-2xl mb-8">Log</h2>
+        <h2 className="font-bold text-2xl mb-8">Blog</h2>
 
         <Posts enableInfiniteScroll />
       </section>
