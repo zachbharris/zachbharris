@@ -25,9 +25,5 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  return (
-    <div className="py-8 max-w-xl mx-auto">
-      <Content slug={params.slug} />
-    </div>
-  );
+  return <Content slug={params.slug} />;
 }

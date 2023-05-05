@@ -14,11 +14,37 @@ export default function BlogPostList({
   enableInfiniteScroll,
   initialData,
 }: Props) {
-  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    usePosts({ initialData });
+  const {
+    data,
+    isLoading,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    isError,
+  } = usePosts({ initialData });
 
   if (isLoading) {
-    return null;
+    return (
+      <>
+        {[...Array(3)].map((_, index) => (
+          <div key={`posts-skeleton-${index}`} className="mb-4">
+            <div className="h-4 w-16 bg-zinc-200 animate-pulse mb-1" />
+            <div className="h-7 w-32 bg-zinc-200 animate-pulse mb-1" />
+            <div className="h-6 w-2/3 bg-zinc-200 animate-pulse" />
+          </div>
+        ))}
+      </>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div>
+        <p className="text-red-500 dark:text-red-400">
+          An error occurred while fetching posts. Please try again later.
+        </p>
+      </div>
+    );
   }
 
   if (data?.pages?.length === 0) {

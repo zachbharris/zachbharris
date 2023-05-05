@@ -16,5 +16,11 @@ async function fetchPosts({ pageParam }: { pageParam?: string | undefined, query
 }
 
 export default function usePosts({ initialData } = {} as { initialData?: any }) {
-  return useInfiniteQuery({ queryKey: ['posts'], queryFn: fetchPosts, getNextPageParam: lastPage => lastPage.next_cursor, initialData: initialData && { pageParams: [], pages: [initialData] } })
+  return useInfiniteQuery({
+    queryKey: ['posts'],
+    queryFn: fetchPosts,
+    getNextPageParam: lastPage => lastPage.next_cursor,
+    initialData: initialData && { pageParams: [], pages: [initialData] },
+    refetchOnWindowFocus: false,
+  })
 }
