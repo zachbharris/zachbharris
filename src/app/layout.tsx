@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import "../styles/globals.css";
 import { Providers } from "./providers";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Zach Harris",
@@ -14,11 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <body className="bg-white dark:bg-zinc-950 text-black  dark:text-white mt-16">
+      <body className="bg-white dark:bg-zinc-950 text-black  dark:text-white min-h-screen flex flex-col">
         <Providers>
           <Navigation />
 
-          <div className="px-4">{children}</div>
+          <div className="px-4 mb-8 mt-16">{children}</div>
+
+          <Footer />
         </Providers>
       </body>
     </html>
