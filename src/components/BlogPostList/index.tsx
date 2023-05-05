@@ -7,19 +7,21 @@ import { Fragment } from "react";
 
 type Props = {
   enableInfiniteScroll?: boolean;
+  initialData?: any;
 };
 
-export default function BlogPostList({ enableInfiniteScroll }: Props) {
+export default function BlogPostList({
+  enableInfiniteScroll,
+  initialData,
+}: Props) {
   const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    usePosts();
-
-  function usePostsAnimation() {}
+    usePosts({ initialData });
 
   if (isLoading) {
     return null;
   }
 
-  if (data?.pages.length === 0) {
+  if (data?.pages?.length === 0) {
     return (
       <div className="flex items-center justify-center rounded-lg p-8 border border-gray-200/90 dark:border-zinc-900">
         <p className="text-zinc-500 dark:text-zinc-400">

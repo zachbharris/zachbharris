@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Posts from "@/components/BlogPostList";
+import getBlogPosts from "@/lib/getBlogPosts";
 
 export default async function Page() {
+  const posts = await getBlogPosts();
+
   return (
     <div className="relative w-full max-w-4xl mx-auto pt-8 md:pt-0">
       <section className="flex flex-col md:my-48">
@@ -59,7 +62,7 @@ export default async function Page() {
       <section className="mt-16">
         <h2 className="font-bold text-2xl mb-8">Blog</h2>
 
-        <Posts enableInfiniteScroll />
+        <Posts enableInfiniteScroll initialData={posts} />
       </section>
     </div>
   );

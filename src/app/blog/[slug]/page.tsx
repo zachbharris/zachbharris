@@ -1,9 +1,5 @@
-import getPost from "@/lib/getPost";
-import Blocks from "@/components/Blocks";
 import Content from "./content";
-import { ListBlockChildrenResponse } from "@notionhq/client/build/src/api-endpoints";
 import getPage from "@/lib/getPage";
-import { isFullPage } from "@notionhq/client";
 import { getPageDescription, getPageTitle } from "@/lib/getProperties";
 
 type Props = {
