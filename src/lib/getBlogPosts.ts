@@ -6,7 +6,7 @@ export default async function getBlogPosts({ start_cursor, page_size = 5 }: { st
 
   if (process.env.NODE_ENV === 'production') {
     filter = {
-      property: 'Published',
+      property: 'Active',
       checkbox: {
         equals: true
       }
