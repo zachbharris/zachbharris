@@ -1,5 +1,5 @@
-# Yo! 🤙
+Coffee + Code = happiness
 
-I like to write lines of code that make the web go brr. I currently work at [Adalo ✨](https://adalo.com) building the future of no-code.
+Hi, my name is Zach. I am a Software Engineer based in St. Louis, Missouri. I like coffee, my cat Kitkat, my dog Haku, music and building mechanical keyboard.
 
-I like coffee, cats, music and mechanical keyboards. If you would like to discuss these things feel free to follow me on [Twitter](https://twitter.com/zachbharris).
+Check me out at [Twitter](https://twitter.com/zachbharris) or go to my website at https://zachbharris.com

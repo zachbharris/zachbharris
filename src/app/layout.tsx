@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning lang="en">
       <body className="bg-white dark:bg-zinc-950 text-black  dark:text-white min-h-screen flex flex-col">
         <Providers>
           <Navigation />
