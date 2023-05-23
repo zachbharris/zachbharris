@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export default function ProjectsPage() {
-  return <h2>Projects</h2>;
+  return redirect("/");
 }

@@ -1,60 +1,31 @@
 import Avatar from "@/components/avatar";
 import Icon, { Icons } from "@/components/icon";
+import { getProjects } from "@/lib/project";
 import Link from "next/link";
 
-const projects: {
-  title: string;
-  slug?: string;
-  href?: string;
-  description?: string;
-}[] = [
-  { title: "Linkify", slug: "linkify", description: "link in bio." },
-  {
-    title: "Shrtn",
-    href: "https://github.com/zachbharris/shrtn",
-    description: "link shrtner.",
-  },
-];
-
 export default async function Page() {
+  const projects = await getProjects();
+
   return (
     <main className="max-w-sm w-full mx-auto">
       <Header />
 
-      <Section
-        title="Projects"
-        link="projects"
-        linkText="All"
-        linkIcon="arrow-right"
-      >
+      <Section title="Projects">
         <div className="flex flex-col gap-4 my-4">
           {projects.map((project, index) => {
-            if (project.slug || project.href) {
-              const href = project.slug
-                ? `/projects/${project.slug}`
-                : project.href!;
-
-              return (
-                <Link
-                  key={`project-${index}`}
-                  href={href}
-                  target={project.href ? "_blank" : undefined}
-                  className="p-4 bg-zinc-800/25 hover:bg-zinc-800 rounded-lg transition-all"
-                >
-                  <h3>{project.title}</h3>
-                  <span className="text-zinc-400">{project.description}</span>
-                </Link>
-              );
-            }
+            const target = project.link ? "_blank" : undefined;
+            const href = project.link || `/projects/${project.slug}`;
 
             return (
-              <div
+              <Link
                 key={`project-${index}`}
+                href={href}
+                target={target}
                 className="p-4 bg-zinc-800/25 hover:bg-zinc-800 rounded-lg transition-all"
               >
                 <h3>{project.title}</h3>
                 <span className="text-zinc-400">{project.description}</span>
-              </div>
+              </Link>
             );
           })}
         </div>
