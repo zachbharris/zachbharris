@@ -4,7 +4,7 @@ import { getProjects } from "@/lib/project";
 import Link from "next/link";
 
 export default async function Page() {
-  const projects = await getProjects();
+  const projects = await getProjects({ next: { revalidate: 60 } });
 
   return (
     <main className="max-w-sm w-full mx-auto">
