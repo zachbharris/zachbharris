@@ -1,5 +1,7 @@
 import { Icons } from "@/components/icon";
 
+export const githubAvatarURL = "https://github.com/zachbharris.png";
+
 export type Space = {
   title: string;
   icon: Icons;

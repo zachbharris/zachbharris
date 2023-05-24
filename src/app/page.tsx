@@ -1,23 +1,28 @@
+"use client";
+
 import Avatar from "@/components/avatar";
+import CopyInput from "@/components/copy-input";
 import Icon from "@/components/icon";
 import { Section, SectionItem, SectionTitle } from "@/components/section";
-import { spaces, projects } from "@/utils/const";
-import { Metadata } from "next";
+import { spaces, projects, githubAvatarURL } from "@/utils/const";
+import { stagger, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
-const githubAvatarURL = "https://github.com/zachbharris.png";
+const sectionStagger = stagger(0.1, { startDelay: 0.15 });
 
-export const metadata: Metadata = {
-  openGraph: {
-    type: "profile",
-    images: [
-      { url: githubAvatarURL, width: 48, height: 48, alt: "Zach Harris" },
-    ],
-  },
-};
+export default function Page() {
+  const [scope, animate] = useAnimate();
 
-export default async function Page() {
+  useEffect(() => {
+    animate(
+      "section",
+      { opacity: [0, 1] },
+      { duration: 1, delay: sectionStagger }
+    );
+  }, [animate]);
+
   return (
-    <main className="max-w-sm w-full mx-auto">
+    <main ref={scope} className="max-w-sm w-full mx-auto">
       <Header />
 
       <Section>
@@ -27,7 +32,7 @@ export default async function Page() {
 
         {projects.map(({ title, href, description, icon }, index) => {
           return (
-            <SectionItem key={`project-${index}`} href={href}>
+            <SectionItem key={`projects-${index}`} href={href}>
               <span className="p-2 rounded-lg bg-zinc-100/5">
                 <Icon icon={icon} className="h-6 w-6" />
               </span>
@@ -83,12 +88,16 @@ const Header = () => {
         </p>
       </section>
 
-      <section className="flex flex-row items-center gap-2 my-8">
-        <span className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-        </span>
-        <p>Available for new opportunities.</p>
+      <section className="flex flex-col justify-center gap-4 my-8">
+        <div className="flex flex-row gap-2 items-center w-full">
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+          <p>Available for new opportunities.</p>
+        </div>
+
+        <CopyInput />
       </section>
     </div>
   );
