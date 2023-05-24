@@ -1,29 +1,29 @@
+import { spaces } from "@/utils/const";
+import Icon from "./icon";
+
 type FooterLink = {
   href: string;
   label: string;
 };
 
 export default function Footer() {
-  const links: FooterLink[] = [
-    { href: "https://read.cv/zachbharris", label: "CV" },
-    { href: "https://github.com/zachbharris", label: "Github" },
-    { href: "https://twitter.com/zachbharris", label: "Twitter" },
-    { href: "https://linkedin.com/in/zachbharris", label: "LinkedIn" },
-  ];
   return (
     <footer className="w-full max-w-sm mx-auto mt-auto">
       <hr className="border-zinc-700 my-4" />
-      <section className="flex gap-2 justify-center">
-        {links.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target="_blank"
-            className="italic text-zinc-400 bg-transparent hover:bg-zinc-800 transition-colors ease-in-out rounded-lg px-2 py-1"
-          >
-            {link.label}
-          </a>
-        ))}
+      <section className="flex flex-col justify-center">
+        <div className="flex flex-row justify-center gap-2">
+          {spaces.map((space, index) => (
+            <a
+              key={`footer-space-${index}`}
+              href={space.href}
+              target="_blank"
+              className="italic text-zinc-400 bg-transparent hover:bg-zinc-800 transition-colors ease-in-out rounded-lg p-2"
+              title={space.title}
+            >
+              <Icon icon={space.icon} />
+            </a>
+          ))}
+        </div>
       </section>
     </footer>
   );

@@ -1,6 +1,8 @@
 import Avatar from "@/components/avatar";
-import Icon, { Icons } from "@/components/icon";
+import Icon from "@/components/icon";
+import { Section, SectionItem, SectionTitle } from "@/components/section";
 import { getProjects } from "@/lib/project";
+import { spaces } from "@/utils/const";
 import Link from "next/link";
 
 export default async function Page() {
@@ -10,25 +12,47 @@ export default async function Page() {
     <main className="max-w-sm w-full mx-auto">
       <Header />
 
-      <Section title="Projects">
-        <div className="flex flex-col gap-4 my-4">
-          {projects.map((project, index) => {
-            const target = project.link ? "_blank" : undefined;
-            const href = project.link || `/projects/${project.slug}`;
+      <Section>
+        <h2>
+          <SectionTitle>Projects</SectionTitle>
+        </h2>
 
-            return (
-              <Link
-                key={`project-${index}`}
-                href={href}
-                target={target}
-                className="p-4 bg-zinc-800/25 hover:bg-zinc-800 rounded-lg transition-all"
-              >
-                <h3>{project.title}</h3>
-                <span className="text-zinc-400">{project.description}</span>
-              </Link>
-            );
-          })}
-        </div>
+        {projects.map(({ title, link, slug, description }, index) => {
+          const href = link || `/projects/${slug}`;
+
+          return (
+            <Link key={`project-${index}`} href={href}>
+              <SectionItem>
+                <div className="flex flex-col">
+                  <span className="text-lg">{title}</span>
+                  <span className="text-sm text-zinc-400">{description}</span>
+                </div>
+              </SectionItem>
+            </Link>
+          );
+        })}
+      </Section>
+
+      <Section>
+        <h2>
+          <SectionTitle>Spaces</SectionTitle>
+        </h2>
+
+        {spaces.map(({ title, icon, href, handle }, index) => (
+          <Link key={`spaces-item-${index}`} href={href}>
+            <SectionItem>
+              <span className="p-2 rounded-lg bg-zinc-100/5">
+                <Icon icon={icon} className="h-6 w-6" />
+              </span>
+              <div className="flex flex-col ">
+                <span className="text-lg">{title}</span>
+                {handle ? (
+                  <span className="text-sm text-zinc-400">{handle}</span>
+                ) : null}
+              </div>
+            </SectionItem>
+          </Link>
+        ))}
       </Section>
     </main>
   );
@@ -64,36 +88,3 @@ const Header = () => {
     </div>
   );
 };
-
-function Section({
-  title,
-  link,
-  linkText = "View All",
-  linkIcon,
-  children,
-}: {
-  title: string;
-  link?: string;
-  linkText?: string;
-  linkIcon?: Icons;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="my-8">
-      <h2 className="text-2xl flex justify-between items-center font-bold">
-        <span>{title}</span>
-        {link ? (
-          <Link
-            href={link}
-            className="text-base font-normal flex flex-row items-center gap-2"
-          >
-            <span>{linkText}</span>
-            {linkIcon ? <Icon icon={linkIcon} /> : null}
-          </Link>
-        ) : null}
-      </h2>
-
-      {children}
-    </section>
-  );
-}
