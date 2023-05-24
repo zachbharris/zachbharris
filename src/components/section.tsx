@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type SectionProps = {
   className?: string;
   children?: React.ReactNode;
@@ -27,14 +29,16 @@ export function SectionTitle({ children, className }: SectionTitleProps) {
 type SectionItemProps = {
   className?: string;
   children?: React.ReactNode;
+  href: string;
 };
 
-export function SectionItem({ className, children }: SectionItemProps) {
+export function SectionItem({ className, children, href }: SectionItemProps) {
   return (
-    <div
-      className={`h-20 flex flex-row items-center gap-4 p-4 bg-zinc-800/25 hover:bg-zinc-800/50 rounded-lg transition-all ${className}`}
+    <Link
+      href={href}
+      className={`h-20 flex flex-row items-center gap-4 p-4 bg-zinc-800/25 hover:bg-zinc-800/50 rounded-lg transition-all outline-none focus-visible:outline-zinc-400 ${className}`}
     >
       {children}
-    </div>
+    </Link>
   );
 }

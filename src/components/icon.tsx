@@ -1,7 +1,8 @@
 import { createElement } from "react";
 
 type SocialIcons = "github" | "twitter" | "linkedin" | "twitch" | "readcv";
-export type Icons = "arrow-right" | SocialIcons;
+type GeneralIcons = "arrow-right" | "list-tree" | "magic-wand";
+export type Icons = GeneralIcons | SocialIcons;
 
 type IconProps = {
   icon: Icons;
@@ -28,6 +29,10 @@ export default function Icon({ icon, className }: IconProps) {
       return createElement(Twitch, props);
     case "readcv":
       return createElement(ReadCV, props);
+    case "list-tree":
+      return createElement(ListTree, props);
+    case "magic-wand":
+      return createElement(MagicWand, props);
     default:
       return null;
   }
@@ -87,6 +92,22 @@ function ReadCV(props: IconComponentProps) {
         clipRule="evenodd"
       ></path>
       <path d="M67.409 54.21a4.424 4.424 0 015.418-3.129l51.279 13.74a4.423 4.423 0 11-2.29 8.547l-51.279-13.74a4.424 4.424 0 01-3.128-5.419zM61.684 75.575a4.424 4.424 0 015.418-3.128l51.279 13.74a4.424 4.424 0 01-2.29 8.547l-51.279-13.74a4.424 4.424 0 01-3.128-5.419zM55.959 96.941a4.424 4.424 0 015.418-3.128l29.913 8.015a4.424 4.424 0 01-2.29 8.547l-29.913-8.015a4.425 4.425 0 01-3.128-5.419z"></path>
+    </svg>
+  );
+}
+
+function ListTree(props: IconComponentProps) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path d="M32 112h32V80H32v32zM0 72c0-13.3 10.7-24 24-24h48c13.3 0 24 10.7 24 24v48c0 13.3-10.7 24-24 24h-8v96h64v-8c0-13.3 10.7-24 24-24h48c13.3 0 24 10.7 24 24v48c0 13.3-10.7 24-24 24h-48c-13.3 0-24-10.7-24-24v-8H64v112c0 8.8 7.2 16 16 16h48v-8c0-13.3 10.7-24 24-24h48c13.3 0 24 10.7 24 24v48c0 13.3-10.7 24-24 24h-48c-13.3 0-24-10.7-24-24v-8H80c-26.5 0-48-21.5-48-48V144h-8c-13.3 0-24-10.7-24-24V72zm160 24c0-8.8 7.2-16 16-16h320c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16zm128 160c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H304c-8.8 0-16-7.2-16-16zm0 160c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H304c-8.8 0-16-7.2-16-16zm-128 16h32v-32h-32v32zm0-192v32h32v-32h-32z"></path>
+    </svg>
+  );
+}
+
+function MagicWand(props: IconComponentProps) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+      <path d="M234.7 42.7L197 56.8c-3 1.1-5 4-5 7.2s2 6.1 5 7.2l37.7 14.1 14.1 37.7c1.1 3 4 5 7.2 5s6.1-2 7.2-5l14.1-37.7L315 71.2c3-1.1 5-4 5-7.2s-2-6.1-5-7.2l-37.7-14.1L263.2 5c-1.1-3-4-5-7.2-5s-6.1 2-7.2 5l-14.1 37.7zM46.1 395.4c-18.7 18.7-18.7 49.1 0 67.9l34.6 34.6c18.7 18.7 49.1 18.7 67.9 0l381.3-381.4c18.7-18.7 18.7-49.1 0-67.9l-34.6-34.5c-18.7-18.7-49.1-18.7-67.9 0L46.1 395.4zM484.6 82.6l-105 105-23.3-23.3 105-105 23.3 23.3zM7.5 117.2C3 118.9 0 123.2 0 128s3 9.1 7.5 10.8L64 160l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L128 160l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L128 96l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L64 96 7.5 117.2zm352 256c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L416 416l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L480 416l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L480 352l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L416 352l-56.5 21.2z"></path>
     </svg>
   );
 }

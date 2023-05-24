@@ -17,7 +17,7 @@ export default function Footer() {
               key={`footer-space-${index}`}
               href={space.href}
               target="_blank"
-              className="italic text-zinc-400 bg-transparent hover:bg-zinc-800 transition-colors ease-in-out rounded-lg p-2"
+              className="italic text-zinc-400 bg-transparent hover:bg-zinc-800 transition-colors ease-in-out rounded-lg p-2 outline-none focus-visible:outline-zinc-400"
               title={space.title}
             >
               <Icon icon={space.icon} />

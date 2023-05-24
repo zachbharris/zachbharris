@@ -39,3 +39,15 @@ export const spaces: Space[] = [
     handle: "@Trobleton",
   },
 ];
+
+type Project = {
+  title: string;
+  description: string;
+  href: string;
+  icon: Icons;
+}
+
+export const projects: Project[] = [
+  { title: 'Linkify', description: 'Link in bio.', href: 'https://github.com/zachbharris/Linkify', icon: 'list-tree' },
+  { title: 'Shrtn', description: 'Simple url shrtnr.', href: 'https://github.com/zachbharris/Shrtn', icon: 'magic-wand' },
+]

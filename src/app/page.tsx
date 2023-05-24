@@ -1,13 +1,21 @@
 import Avatar from "@/components/avatar";
 import Icon from "@/components/icon";
 import { Section, SectionItem, SectionTitle } from "@/components/section";
-import { getProjects } from "@/lib/project";
-import { spaces } from "@/utils/const";
-import Link from "next/link";
+import { spaces, projects } from "@/utils/const";
+import { Metadata } from "next";
+
+const githubAvatarURL = "https://github.com/zachbharris.png";
+
+export const metadata: Metadata = {
+  openGraph: {
+    type: "profile",
+    images: [
+      { url: githubAvatarURL, width: 48, height: 48, alt: "Zach Harris" },
+    ],
+  },
+};
 
 export default async function Page() {
-  const projects = await getProjects({ next: { revalidate: 60 } });
-
   return (
     <main className="max-w-sm w-full mx-auto">
       <Header />
@@ -17,18 +25,17 @@ export default async function Page() {
           <SectionTitle>Projects</SectionTitle>
         </h2>
 
-        {projects.map(({ title, link, slug, description }, index) => {
-          const href = link || `/projects/${slug}`;
-
+        {projects.map(({ title, href, description, icon }, index) => {
           return (
-            <Link key={`project-${index}`} href={href}>
-              <SectionItem>
-                <div className="flex flex-col">
-                  <span className="text-lg">{title}</span>
-                  <span className="text-sm text-zinc-400">{description}</span>
-                </div>
-              </SectionItem>
-            </Link>
+            <SectionItem key={`project-${index}`} href={href}>
+              <span className="p-2 rounded-lg bg-zinc-100/5">
+                <Icon icon={icon} className="h-6 w-6" />
+              </span>
+              <div className="flex flex-col ">
+                <span className="text-lg">{title}</span>
+                <span className="text-sm text-zinc-400">{description}</span>
+              </div>
+            </SectionItem>
           );
         })}
       </Section>
@@ -39,19 +46,17 @@ export default async function Page() {
         </h2>
 
         {spaces.map(({ title, icon, href, handle }, index) => (
-          <Link key={`spaces-item-${index}`} href={href}>
-            <SectionItem>
-              <span className="p-2 rounded-lg bg-zinc-100/5">
-                <Icon icon={icon} className="h-6 w-6" />
-              </span>
-              <div className="flex flex-col ">
-                <span className="text-lg">{title}</span>
-                {handle ? (
-                  <span className="text-sm text-zinc-400">{handle}</span>
-                ) : null}
-              </div>
-            </SectionItem>
-          </Link>
+          <SectionItem key={`spaces-item-${index}`} href={href}>
+            <span className="p-2 rounded-lg bg-zinc-100/5">
+              <Icon icon={icon} className="h-6 w-6" />
+            </span>
+            <div className="flex flex-col ">
+              <span className="text-lg">{title}</span>
+              {handle ? (
+                <span className="text-sm text-zinc-400">{handle}</span>
+              ) : null}
+            </div>
+          </SectionItem>
         ))}
       </Section>
     </main>
@@ -62,7 +67,7 @@ const Header = () => {
   return (
     <div className="text-zinc-400">
       <div className="flex flex-row gap-4 items-center">
-        <Avatar />
+        <Avatar src={githubAvatarURL} />
 
         <span className="flex flex-col">
           <h1 className="font-bold text-lg text-zinc-50">Zach Harris</h1>
