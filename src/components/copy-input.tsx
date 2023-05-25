@@ -18,7 +18,7 @@ export default function CopyInput() {
         value="hi@zachbharris.com"
         className="bg-transparent flex-1 overflow-hidden outline-none"
         ref={inputRef}
-        onClick={onClick}
+        onClick={() => inputRef.current?.select()}
         readOnly
       />
       <button
