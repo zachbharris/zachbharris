@@ -5,10 +5,10 @@ import CopyInput from "@/components/copy-input";
 import Icon from "@/components/icon";
 import { Section, SectionItem, SectionTitle } from "@/components/section";
 import { spaces, projects, githubAvatarURL } from "@/utils/const";
-import { stagger, useAnimate } from "framer-motion";
+import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect } from "react";
 
-const sectionStagger = stagger(0.1, { startDelay: 0.15 });
+const sectionStagger = stagger(0.1);
 
 export default function Page() {
   const [scope, animate] = useAnimate();
@@ -19,10 +19,15 @@ export default function Page() {
       { opacity: [0, 1] },
       { duration: 1, delay: sectionStagger }
     );
-  }, [animate]);
+  }, [animate, scope]);
 
   return (
-    <main ref={scope} className="max-w-sm w-full mx-auto">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      ref={scope}
+      className="max-w-sm w-full mx-auto"
+    >
       <Header />
 
       <Section>
@@ -64,7 +69,7 @@ export default function Page() {
           </SectionItem>
         ))}
       </Section>
-    </main>
+    </motion.main>
   );
 }
 
