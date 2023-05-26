@@ -14,10 +14,8 @@ export default function SpotifyNowPlaying() {
     getData();
   }, []);
 
-  console.log(data);
-
   return (
-    <section>
+    <section className="relative">
       <AnimatePresence>
         {data?.isPlaying ? (
           <motion.span
