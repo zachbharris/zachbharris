@@ -5,9 +5,7 @@ import { useEffect, useState } from "react";
 export default function SpotifyNowPlaying() {
   const [data, setData] = useState<CurrentlyPlayingSong>();
   const getData = async () => {
-    const res = await fetch(`/api/spotify`, {
-      next: { revalidate: 10 },
-    });
+    const res = await fetch(`/api/spotify`);
     setData(await res.json());
   };
 
