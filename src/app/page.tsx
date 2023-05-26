@@ -7,6 +7,7 @@ import { Section, SectionItem, SectionTitle } from "@/components/section";
 import { spaces, projects, githubAvatarURL } from "@/utils/const";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect } from "react";
+import SpotifyNowPlaying from "@/components/spotifyNowPlaying";
 
 const sectionStagger = stagger(0.1);
 
@@ -69,6 +70,8 @@ export default function Page() {
           </SectionItem>
         ))}
       </Section>
+
+      <SpotifyNowPlaying />
     </motion.main>
   );
 }
