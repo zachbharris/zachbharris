@@ -1,5 +1,6 @@
 import { CurrentlyPlayingSong } from "@/utils/spotify";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function SpotifyNowPlaying() {
@@ -13,35 +14,30 @@ export default function SpotifyNowPlaying() {
     getData();
   }, []);
 
-  return (
-    <AnimatePresence>
-      {data?.isPlaying ? (
-        <motion.div
-          className="flex flex-col gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <h2 className="text-2xl font-bold font-sans">Now Listening</h2>
+  console.log(data);
 
-          <div className="flex flex-row items-center gap-4 p-4">
-            <div
-              className="h-16 w-16 rounded-lg"
-              style={{
-                backgroundImage: `url(${data?.albumImageUrl})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-            <div className="flex flex-col">
-              <span className="text-lg">{data?.title}</span>
-              <span className="text-sm text-zinc-400">{data?.artist}</span>
-            </div>
-          </div>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+  return (
+    <section>
+      <AnimatePresence>
+        {data?.isPlaying ? (
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Currently listening to{" "}
+            <Link
+              href={data.songUrl}
+              target="_blank"
+              className="text-green-500 hover:text-green-500/75 transition-colors"
+            >
+              {data.title}
+            </Link>{" "}
+            by <span className="text-zinc-100">{data.artist}</span>.
+          </motion.span>
+        ) : null}
+      </AnimatePresence>
+    </section>
   );
 }

@@ -39,7 +39,7 @@ export default function Page() {
         {projects.map(({ title, href, description, icon }, index) => {
           return (
             <SectionItem key={`projects-${index}`} href={href}>
-              <span className="p-2 rounded-lg bg-zinc-100/5">
+              <span className="p-2 rounded-lg bg-zinc-700/25">
                 <Icon icon={icon} className="h-6 w-6" />
               </span>
               <div className="flex flex-col ">
@@ -70,8 +70,6 @@ export default function Page() {
           </SectionItem>
         ))}
       </Section>
-
-      <SpotifyNowPlaying />
     </motion.main>
   );
 }
@@ -95,6 +93,8 @@ const Header = () => {
           care about my React skills.
         </p>
       </section>
+
+      <SpotifyNowPlaying />
 
       <section className="flex flex-col justify-center gap-4 my-8">
         <div className="flex flex-row gap-2 items-center w-full">
