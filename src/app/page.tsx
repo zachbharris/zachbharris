@@ -96,17 +96,23 @@ const Header = () => {
 
       <SpotifyNowPlaying />
 
-      <section className="flex flex-col justify-center gap-4 my-8">
-        <div className="flex flex-row gap-2 items-center w-full">
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-          </span>
-          <p>Available for new opportunities.</p>
-        </div>
-
-        <CopyInput />
-      </section>
+      {/* <LookingForWork /> */}
     </div>
   );
 };
+
+function LookingForWork() {
+  return (
+    <section className="flex flex-col justify-center gap-4 my-8">
+      <div className="flex flex-row gap-2 items-center w-full">
+        <span className="relative flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </span>
+        <p>Available for new opportunities.</p>
+      </div>
+
+      <CopyInput />
+    </section>
+  );
+}

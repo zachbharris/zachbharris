@@ -17,14 +17,14 @@ export default function SpotifyNowPlaying() {
   return (
     <section className="relative">
       <AnimatePresence>
-        {data?.isPlaying ? (
+        {data?.isPlaying || data?.title ? (
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Currently listening to{" "}
+            Listening to{" "}
             <Link
               href={data.songUrl}
               target="_blank"
