@@ -96,7 +96,7 @@ const Header = () => {
 
       <SpotifyNowPlaying />
 
-      {/* <LookingForWork /> */}
+      <LookingForWork />
     </div>
   );
 };
