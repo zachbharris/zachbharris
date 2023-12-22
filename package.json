@@ -20,6 +20,13 @@
   },
   "homepage": "https://github.com/zachbharris/zachbharris#readme",
   "dependencies": {
-    "astro": "^4.0.7"
+    "@astrojs/tailwind": "^5.0.4",
+    "astro": "^4.0.7",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
+    "typescript": "^5.3.3"
   }
 }
