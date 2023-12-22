@@ -4,6 +4,10 @@
   "description": "I like to write lines of code that make the web go brr. I currently work at [Adalo ✨](https://adalo.com) building the future of no-code.",
   "main": "index.js",
   "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
@@ -16,5 +20,6 @@
   },
   "homepage": "https://github.com/zachbharris/zachbharris#readme",
   "dependencies": {
+    "astro": "^4.0.7"
   }
 }
