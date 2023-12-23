@@ -1,6 +1,6 @@
 ---
 import Header from '../components/Header.astro'
-const { pageTitle } = Astro.props
+const { pageTitle, hideTitle = false } = Astro.props
 ---
 
 <html lang="en">
@@ -13,7 +13,7 @@ const { pageTitle } = Astro.props
   </head>
   <body>
     <Header />
-    <h1>{pageTitle}</h1>
+    {!hideTitle && <h1>{pageTitle}</h1>}
     <slot />
   </body>
 </html>

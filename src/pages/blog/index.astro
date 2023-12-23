@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostItem from '../../components/PostItem.astro';
+
+const posts = await Astro.glob('../../data/posts/*.md');
+---
+
+<BaseLayout pageTitle="Blog" hideTitle>
+  <ul>
+    {posts.map(post => {
+      const href = `/blog/${post.file.split('/').pop().split('.').shift()}`;
+      return <PostItem title={post.frontmatter.title} href={href} />
+    })}
+  </ul>
+</BaseLayout>
