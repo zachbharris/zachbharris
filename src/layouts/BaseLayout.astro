@@ -1,7 +1,8 @@
 ---
 import "@fontsource-variable/inter";
-import Header from "../components/Header.astro";
-const { pageTitle, hideTitle = false } = Astro.props;
+import Header from "@/components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
+const { pageTitle, hideTitle = false, description } = Astro.props;
 ---
 
 <html lang="en" class="bg-neutral-950 text-white">
@@ -10,11 +11,15 @@ const { pageTitle, hideTitle = false } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body>
-    <Header />
-    {!hideTitle && <h1>{pageTitle}</h1>}
-    <slot />
+    <div class="w-full max-w-2xl mx-auto">
+      <Header />
+      {!hideTitle && <h1>{pageTitle}</h1>}
+      <slot />
+    </div>
   </body>
 </html>
