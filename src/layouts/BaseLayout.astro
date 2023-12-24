@@ -1,11 +1,12 @@
 ---
-import Header from '../components/Header.astro'
-const { pageTitle, hideTitle = false } = Astro.props
+import "@fontsource-variable/inter";
+import Header from "../components/Header.astro";
+const { pageTitle, hideTitle = false } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="bg-neutral-950 text-white">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
@@ -17,4 +18,3 @@ const { pageTitle, hideTitle = false } = Astro.props
     <slot />
   </body>
 </html>
-
