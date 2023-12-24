@@ -1,7 +1,11 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HireMe from "@/components/HireMe.astro";
+
+const posts = await Astro.glob('../data/posts/*.md')
 ---
 
 <BaseLayout pageTitle="zachbharris">
+  <HireMe />
   <p>Hello World!</p>
 </BaseLayout>

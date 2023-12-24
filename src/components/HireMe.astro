@@ -1,0 +1,43 @@
+---
+---
+
+<section class="flex flex-col justify-center gap-4">
+  <div class="flex flex-row gap-2 items-center w-full">
+    <span class="relative flex h-3 w-3">
+      <span
+        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+      ></span>
+      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+      ></span>
+    </span>
+
+    <p>Available for new opportunities.</p>
+  </div>
+
+  <div class="w-full max-w-sm bg-neutral-900 rounded-lg px-2 py-1 flex flex-row items-center">
+    <input
+      class="pl-1 bg-transparent w-full focus:outline-none"
+      id="hire-email"
+      name="email"
+      readonly
+      value="hire@zachbharris.com"
+    />
+
+    <button id="copy-email-button" type="button" aria-label="copy email from input" class="p-2 inline-block aspect-square rounded-lg hover:bg-neutral-800">
+      <svg class="fill-neutral-300 aspect-square" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"/></svg>
+    </button>
+  </div>
+</section>
+
+<script>
+  const hireEmail = document.getElementById("hire-email") as HTMLInputElement;
+  const copyEmailButton = document.getElementById("copy-email-button") as HTMLButtonElement;
+
+  function copyEmail() {
+    hireEmail.select();
+    navigator.clipboard.writeText(hireEmail.value);
+  }
+
+  hireEmail.addEventListener("click", copyEmail);
+  copyEmailButton.addEventListener("click", copyEmail);
+</script>

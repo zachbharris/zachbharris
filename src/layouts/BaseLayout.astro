@@ -1,11 +1,13 @@
 ---
 import "@fontsource-variable/inter";
-import Header from "@/components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
-const { pageTitle, hideTitle = false, description } = Astro.props;
+const { pageTitle, description } = Astro.props;
 ---
 
-<html lang="en" class="bg-neutral-950 text-white">
+<html
+  lang="en"
+  class="bg-neutral-950 text-neutral-400 selection:bg-neutral-600/25"
+>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,10 +17,8 @@ const { pageTitle, hideTitle = false, description } = Astro.props;
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
-  <body>
+  <body class="p-4">
     <div class="w-full max-w-2xl mx-auto">
-      <Header />
-      {!hideTitle && <h1>{pageTitle}</h1>}
       <slot />
     </div>
   </body>
