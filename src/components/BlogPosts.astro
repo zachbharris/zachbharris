@@ -1,0 +1,29 @@
+---
+import type { Post } from "@/types/post";
+import formatPostPublishDate from "@/utils/formatPostPublishDate";
+let posts: Post[] = await Astro.glob("../data/posts/*.md");
+posts = posts.map((post) => ({
+  ...post,
+  frontmatter: {
+    ...post.frontmatter,
+    publishDate: formatPostPublishDate(post.frontmatter.publishDate),
+  },
+}));
+---
+
+<ul class="flex flex-col gap-4">
+  {
+    posts.map((post) => {
+      const href = `/blog/${post.file.split("/").pop().split(".").shift()}`;
+      return (
+        <li class="hover:translate-x-2 transition-transform">
+          <a href={href} class="flex flex-col">
+            <span class="font-medium text-lg">{post.frontmatter.title}</span>
+            <span>{post.frontmatter.description}</span>
+            <span>{post.frontmatter.publishDate}</span>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

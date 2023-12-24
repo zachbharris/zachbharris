@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/inter";
 import { ViewTransitions } from "astro:transitions";
+import Header from '@/components/Header.astro'
 const { pageTitle, description } = Astro.props;
 ---
 
@@ -17,8 +18,9 @@ const { pageTitle, description } = Astro.props;
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
-  <body class="p-4">
-    <div class="w-full max-w-2xl mx-auto">
+  <body class="relative p-4">
+    <div class="w-full max-w-lg mx-auto flex flex-col gap-4">
+      <Header />
       <slot />
     </div>
   </body>

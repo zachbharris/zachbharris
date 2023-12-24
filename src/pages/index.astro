@@ -1,11 +1,16 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HireMe from "@/components/HireMe.astro";
-
-const posts = await Astro.glob('../data/posts/*.md')
+import BlogPosts from "@/components/BlogPosts.astro";
 ---
 
 <BaseLayout pageTitle="zachbharris">
+  <p class='max-w-sm'>Software Engineer by day, keyboard builder by night, and coffee connoisseur all the time. Proud dad to a dog and cat who don't care about my React skills.</p>
   <HireMe />
-  <p>Hello World!</p>
+
+  <h2 class="font-bold text-neutral-100 text-xl">Blog</h2>
+  <BlogPosts limit={5} />
+
+  <!-- TODO: Add Projects Section -->
+  <!--TODO: Add Social Media Links -->
 </BaseLayout>
