@@ -14,9 +14,11 @@ posts = posts.map((post) => ({
 <ul class="flex flex-col gap-4">
   {
     posts.map((post) => {
-      const href = `/blog/${post.file.split("/").pop().split(".").shift()}`;
+      const slug = post.file.split("/").pop().split(".").shift();
+      const href = `/blog/${slug}`;
+
       return (
-        <li class="hover:translate-x-2 transition-transform">
+        <li> 
           <a href={href} class="flex flex-col">
             <span class="font-medium text-lg">{post.frontmatter.title}</span>
             <span>{post.frontmatter.description}</span>
