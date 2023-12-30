@@ -1,13 +1,14 @@
 ---
-import "@fontsource-variable/inter";
+import '@/styles/fonts.css'
 import { ViewTransitions } from "astro:transitions";
 import Header from '@/components/Header.astro'
+import Gradient from '@/components/Gradient.astro'
 const { pageTitle, description } = Astro.props;
 ---
 
 <html
   lang="en"
-  class="bg-neutral-950 text-neutral-400 selection:bg-neutral-600/25"
+  class="font-mono bg-neutral-950 text-neutral-400 selection:bg-neutral-600/25"
 >
   <head>
     <meta charset="utf-8" />
@@ -18,8 +19,9 @@ const { pageTitle, description } = Astro.props;
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
-  <body class="relative p-4">
-    <div class="w-full max-w-lg mx-auto flex flex-col gap-4">
+  <body class="relative overflow-x-hidden">
+    <Gradient />
+    <div class="w-full max-w-lg mx-auto flex flex-col gap-16 p-4">
       <Header />
       <slot />
     </div>

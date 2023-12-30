@@ -5,12 +5,32 @@ import BlogPosts from "@/components/BlogPosts.astro";
 ---
 
 <BaseLayout pageTitle="zachbharris">
-  <p class='max-w-sm'>Software Engineer by day, keyboard builder by night, and coffee connoisseur all the time. Proud dad to a dog and cat who don't care about my React skills.</p>
+  <section class="flex flex-col gap-4">
+    <h1 class="font-bold text-2xl text-neutral-100"># Hello World</h1>
+    <p class="text-balance">
+      I'm Zach Harris, a <span class="text-neutral-100 font-medium"
+        >software engineer</span
+      > by day, <span class="text-neutral-100 font-medium"
+        >keyboard builder</span
+      > by night, and brewing fresh coffee all the time. Proud dad to a dog and
+      cat who don't care about my React skills.
+    </p>
+  </section>
+
   <HireMe />
 
-  <h2 class="font-bold text-neutral-100 text-xl">Blog</h2>
-  <BlogPosts limit={5} />
+  <section>
+    <h1 class="font-bold text-2xl text-neutral-100"># Projects</h1>
+  </section>
 
-  <!-- TODO: Add Projects Section -->
+  <section>
+    <h1 class="font-bold text-2xl text-neutral-100"># Keyboards</h1>
+  </section>
+
+  <section>
+    <h1 class="font-bold text-2xl text-neutral-100"># Blog</h1>
+    <BlogPosts />
+  </section>
+
   <!--TODO: Add Social Media Links -->
 </BaseLayout>
