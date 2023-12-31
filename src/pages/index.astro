@@ -2,6 +2,22 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HireMe from "@/components/HireMe.astro";
 import BlogPosts from "@/components/BlogPosts.astro";
+import ListItem, { type TListItem } from "@/components/ListItem.astro";
+
+const projects: TListItem[] = [
+  {
+    title: "Shrtn",
+    description: "Create short URLs to easily share.",
+    tags: ["Next.js", "Tailwind CSS"],
+    href: "https://github.com/zachbharris/shrtn",
+  },
+  {
+    title: "WPM",
+    description: "Test your typing speed.",
+    tags: ["Next.js", "Tailwind CSS"],
+    href: "https://github.com/zachbharris/wpm",
+  },
+];
 ---
 
 <BaseLayout pageTitle="zachbharris">
@@ -19,15 +35,27 @@ import BlogPosts from "@/components/BlogPosts.astro";
 
   <HireMe />
 
-  <section>
+  <section class="flex flex-col gap-4">
     <h1 class="font-bold text-2xl text-neutral-100"># Projects</h1>
+
+    <ul class="flex flex-col gap-4">
+      {
+        projects.map((p) => {
+          return (
+            <li>
+              <ListItem {...p} />
+            </li>
+          );
+        })
+      }
+    </ul>
   </section>
 
-  <section>
+  <section class="flex flex-col gap-4">
     <h1 class="font-bold text-2xl text-neutral-100"># Keyboards</h1>
   </section>
 
-  <section>
+  <section class="flex flex-col gap-4">
     <h1 class="font-bold text-2xl text-neutral-100"># Blog</h1>
     <BlogPosts />
   </section>

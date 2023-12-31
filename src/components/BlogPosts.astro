@@ -1,6 +1,7 @@
 ---
 import type { Post } from "@/types/post";
 import formatPostPublishDate from "@/utils/formatPostPublishDate";
+import ListItem from '@/components/ListItem.astro'
 let posts: Post[] = await Astro.glob("../data/posts/*.md");
 posts = posts.map((post) => ({
   ...post,
@@ -19,11 +20,11 @@ posts = posts.map((post) => ({
 
       return (
         <li> 
-          <a href={href} class="flex flex-col">
-            <span class="font-medium text-lg">{post.frontmatter.title}</span>
-            <span>{post.frontmatter.description}</span>
-            <span>{post.frontmatter.publishDate}</span>
-          </a>
+          <ListItem
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            href={href}
+          />
         </li>
       );
     })

@@ -3,6 +3,7 @@ import '@/styles/fonts.css'
 import { ViewTransitions } from "astro:transitions";
 import Header from '@/components/Header.astro'
 import Gradient from '@/components/Gradient.astro'
+import Footer from '@/components/Footer.astro'
 const { pageTitle, description } = Astro.props;
 ---
 
@@ -25,5 +26,7 @@ const { pageTitle, description } = Astro.props;
       <Header />
       <slot />
     </div>
+
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,24 @@
+---
+const { title, description, tags, href } = Astro.props;
+
+export type TListItem = {
+  title: string;
+  description?: string;
+  tags: string[];
+  href: string;
+};
+---
+
+<a href={href} class="flex flex-col gap-2 hover:translate-x-2 transition-transform">
+  <span class="font-medium text-xl text-neutral-200">{title}</span>
+  <span class="text-sm text-neutral-200">{description}</span>
+  {
+    tags ? (
+      <span class="text-xs flex flex-row gap-2">
+        {tags.map((t: string) => (
+          <span>{t}</span>
+        ))}
+      </span>
+    ) : null
+  }
+</a>
