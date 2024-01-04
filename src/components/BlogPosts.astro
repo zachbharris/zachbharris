@@ -23,6 +23,7 @@ posts = posts.map((post) => ({
           <ListItem
             title={post.frontmatter.title}
             description={post.frontmatter.description}
+            footer={post.frontmatter.publishDate}
             href={href}
           />
         </li>

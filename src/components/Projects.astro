@@ -1,0 +1,35 @@
+---
+import ListItem, { type TListItem} from '@/components/ListItem.astro';
+const projects: TListItem[] = [
+  {
+    title: "Shrtn",
+    description: "Create short URLs to easily share.",
+    tags: ["Next.js", "Tailwind CSS"],
+    href: "https://github.com/zachbharris/shrtn",
+  },
+  {
+    title: "WPM",
+    description: "Test your typing speed.",
+    tags: ["Next.js", "Tailwind CSS"],
+    href: "https://github.com/zachbharris/wpm",
+  },
+  {
+    title: "withhaku",
+    description: "Build Expo apps with a low-code editor.",
+    tags: ["Next.js", "Tailwind CSS", "Expo", "SQLite"],
+    href: "https://github.com/SirrahHQ/editor",
+  },
+];
+---
+
+<ul class="flex flex-col gap-4">
+  {
+    projects.map((p) => {
+      return (
+        <li>
+          <ListItem external {...p} />
+        </li>
+      );
+    })
+  }
+</ul>

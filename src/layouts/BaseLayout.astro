@@ -1,9 +1,7 @@
 ---
-import '@/styles/fonts.css'
-import { ViewTransitions } from "astro:transitions";
-import Header from '@/components/Header.astro'
-import Gradient from '@/components/Gradient.astro'
-import Footer from '@/components/Footer.astro'
+import "@/styles/fonts.css";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 const { pageTitle, description } = Astro.props;
 ---
 
@@ -18,11 +16,9 @@ const { pageTitle, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
-    <ViewTransitions />
   </head>
-  <body class="relative overflow-x-hidden">
-    <Gradient />
-    <div class="w-full max-w-lg mx-auto flex flex-col gap-16 p-4">
+  <body class="relative overflow-x-hidden min-h-screen flex flex-col">
+    <div class="w-full max-w-lg mx-auto flex flex-col gap-16 p-4 h-full">
       <Header />
       <slot />
     </div>

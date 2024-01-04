@@ -1,58 +1,32 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import HireMe from "@/components/HireMe.astro";
 import BlogPosts from "@/components/BlogPosts.astro";
-import ListItem, { type TListItem } from "@/components/ListItem.astro";
+import Projects from "@/components/Projects.astro";
+import Mentions from "@/components/Mentions.astro";
 
-const projects: TListItem[] = [
-  {
-    title: "Shrtn",
-    description: "Create short URLs to easily share.",
-    tags: ["Next.js", "Tailwind CSS"],
-    href: "https://github.com/zachbharris/shrtn",
-  },
-  {
-    title: "WPM",
-    description: "Test your typing speed.",
-    tags: ["Next.js", "Tailwind CSS"],
-    href: "https://github.com/zachbharris/wpm",
-  },
-];
+const heroText =
+  "I'm Zach Harris, a software engineer by day, keyboard builder by night, and brewing fresh coffee all the time. Proud dad to a dog and cat who don't care about my React skills.";
 ---
 
-<BaseLayout pageTitle="zachbharris">
+<BaseLayout
+  pageTitle="zachbharris"
+  description="Full Stack Engineer from St. Louis, blending expertise in JavaScript, React, and Node.js with a love for custom mechanical keyboards, coffee brewing, and family time with pets."
+>
   <section class="flex flex-col gap-4">
     <h1 class="font-bold text-2xl text-neutral-100"># Hello World</h1>
-    <p class="text-balance">
-      I'm Zach Harris, a <span class="text-neutral-100 font-medium"
-        >software engineer</span
-      > by day, <span class="text-neutral-100 font-medium"
-        >keyboard builder</span
-      > by night, and brewing fresh coffee all the time. Proud dad to a dog and
-      cat who don't care about my React skills.
+    <p
+      aria-label={heroText}
+      id="text-container"
+      class="text-decipher max-w-full text-balance break-all block"
+    >
+      {heroText}
     </p>
   </section>
-
-  <HireMe />
 
   <section class="flex flex-col gap-4">
     <h1 class="font-bold text-2xl text-neutral-100"># Projects</h1>
 
-    <ul class="flex flex-col gap-4">
-      {
-        projects.map((p) => {
-          return (
-            <li>
-              <ListItem {...p} />
-            </li>
-          );
-        })
-      }
-    </ul>
-  </section>
-
-  <section class="flex flex-col gap-4">
-    <h1 class="font-bold text-2xl text-neutral-100"># Keyboards</h1>
+    <Projects />
   </section>
 
   <section class="flex flex-col gap-4">
@@ -60,5 +34,20 @@ const projects: TListItem[] = [
     <BlogPosts />
   </section>
 
-  <!--TODO: Add Social Media Links -->
+  <section class="flex flex-col gap-4">
+    <h1 class="font-bold text-2xl text-neutral-100"># Mentions</h1>
+    <Mentions />
+  </section>
 </BaseLayout>
+
+<script>
+  import { decryptText } from "@/utils/decryptText";
+  const finalText =
+    "I'm Zach Harris, a software engineer by day, keyboard builder by night, and brewing fresh coffee all the time. Proud dad to a dog and cat who don't care about my React skills.";
+
+  window.addEventListener("DOMContentLoaded", () => {
+    window.requestAnimationFrame(() =>
+      decryptText("text-container", finalText),
+    );
+  });
+</script>

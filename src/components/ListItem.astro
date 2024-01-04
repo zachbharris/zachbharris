@@ -1,24 +1,36 @@
 ---
-const { title, description, tags, href } = Astro.props;
+const { title, external, description, tags, href, footer } = Astro.props;
 
 export type TListItem = {
   title: string;
-  description?: string;
-  tags: string[];
+  description: string;
   href: string;
+  footer?: string;
+  tags?: string[];
+  external?: boolean;
 };
 ---
 
-<a href={href} class="flex flex-col gap-2 hover:translate-x-2 transition-transform">
-  <span class="font-medium text-xl text-neutral-200">{title}</span>
-  <span class="text-sm text-neutral-200">{description}</span>
+<a
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  class="flex flex-col gap-2 hover:translate-x-2 transition-transform"
+>
+  <span class="flex items-center gap-4 font-medium text-xl text-neutral-100">
+    {title}
+  </span>
+  <span class="text-sm text-neutral-300">{description}</span>
   {
     tags ? (
       <span class="text-xs flex flex-row gap-2">
         {tags.map((t: string) => (
-          <span>{t}</span>
+          <span class="px-2 h-fit py-1 rounded-full bg-neutral-900 border border-neutral-800">
+            {t}
+          </span>
         ))}
       </span>
     ) : null
   }
+  {footer ? <span class="text-sm">{footer}</span> : null}
 </a>

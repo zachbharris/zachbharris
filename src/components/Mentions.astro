@@ -1,0 +1,27 @@
+---
+import ListItem, { type TListItem } from "@/components/ListItem.astro";
+
+const data: TListItem[] = [
+  {
+    title: "Adalo Component Marketplace",
+    description:
+      "Create custom React Native components for Adalo no-code apps.",
+    href: "https://www.producthunt.com/products/adalo#adalo-component-marketplace",
+    tags: ["Adalo", "Product Hunt", "Product Launch"],
+  },
+  {
+    title: "Adalo",
+    description: "Build apps for every platform, without code.",
+    href: "https://www.producthunt.com/products/adalo#adalo",
+    tags: ["Adalo", "Product Hunt", "Product Launch"],
+  },
+];
+---
+
+<ul class="flex flex-col gap-4">
+  {
+    data.map((item) => {
+      return <ListItem external {...item} />;
+    })
+  }
+</ul>

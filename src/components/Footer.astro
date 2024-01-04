@@ -1,7 +1,19 @@
 ---
-
+import Link from "@/components/Link.astro";
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="px-4 py-6 max-w-lg mx-auto">
-  <span>zachbharris</span>
+<footer
+  class="mt-auto px-4 py-6 max-w-lg mx-auto text-center flex flex-col gap-8 text-center"
+>
+  <div class="flex flex-col text-neutral-500">
+    <span>&copy; {currentYear} Brewed by Zach.</span>
+    <span>All Rights Reserved.</span>
+  </div>
+  <div>
+    <Link href="https://twitter.com/zachbharris" external>Twitter</Link>
+    <Link href="https://linkedin.com/in/zachbharris" external>LinkedIn</Link>
+    <Link href="https://github.com/zachbharris" external>GitHub</Link>
+    <Link href="https://cal.com/zachbharris/15min" external>Cal</Link>
+  </div>
 </footer>

@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { Content, frontmatter } = Astro.props.post;
 const { title, description, publishDate } = frontmatter;
-const { slug, readingTime } = getPostData(Astro.props.post);
+const { readingTime } = getPostData(Astro.props.post);
 
 const formattedPublishDate = new Date(publishDate).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -22,12 +22,15 @@ const formattedPublishDate = new Date(publishDate).toLocaleDateString('en-US', {
 ---
 
 <BaseLayout pageTitle={title} description={description} hideTitle>
-  <header class="pb-8">
-    <h1 class="text-bold text-2xl">{title}</h1>
-    <p>{formattedPublishDate} ~ {readingTime}</p>
-  </header>
+  <div class="flex flex-col gap-4">
+    <div>
+      <h1 class="text-bold text-2xl text-neutral-100">{title}</h1>
+      <span class="text-sm">{formattedPublishDate} ~ {readingTime}</span>
+    </div>
 
-  <div>
-    <Content />
+    <div>
+      <Content />
+    </div>
   </div>
+
 </BaseLayout>
