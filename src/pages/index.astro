@@ -41,13 +41,57 @@ const heroText =
 </BaseLayout>
 
 <script>
+  import { hasDecryptedText } from "@/store";
   import { decryptText } from "@/utils/decryptText";
   const finalText =
     "I'm Zach Harris, a software engineer by day, keyboard builder by night, and brewing fresh coffee all the time. Proud dad to a dog and cat who don't care about my React skills.";
 
-  window.addEventListener("DOMContentLoaded", () => {
-    window.requestAnimationFrame(() =>
-      decryptText("text-container", finalText),
-    );
+  hasDecryptedText.subscribe((value) => {
+    console.log(value)
+    if (value) {
+      // do nothing
+    } else {
+      hasDecryptedText.set(true);
+      window.addEventListener("DOMContentLoaded", () => {
+        window.requestAnimationFrame(() =>
+          decryptText("text-container", finalText),
+        );
+      });
+    }
+  });
+</script>
+
+<script>
+  // Define the sequence of the Konami Code
+  const konamiCode = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
+  let current = 0;
+
+  // Add an event listener for keydown events
+  document.addEventListener("keydown", (event) => {
+    // Check if the current key matches the next key in the Konami Code
+    if (event.key === konamiCode[current]) {
+      // Move to the next key in the sequence
+      current++;
+
+      // Check if the entire sequence is complete
+      if (current === konamiCode.length) {
+        alert("Konami Code entered!");
+        current = 0; // Reset the sequence
+      }
+    } else {
+      // Reset the sequence if a wrong key is pressed
+      current = 0;
+    }
   });
 </script>
