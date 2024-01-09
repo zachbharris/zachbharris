@@ -3,10 +3,22 @@ const { post } = Astro.props;
 const href = `/blog/${post.file.split("/").pop().split(".").shift()}`;
 
 const { title } = post.frontmatter;
+
+const date = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+}).format(post.frontmatter.date);
 ---
 
-<li class="border border-neutral-700">
-  <a href={href}>
-    {title}
+<li class="">
+  <a href={href} class="flex flex-col gap-1">
+    <span class="text-xl text-neutral-100">
+      {title}
+    </span>
+    <span class="flex flex-row gap-4">
+      <span>{date}</span>
+      <span>{post.readingTime}</span>
+    </span>
   </a>
 </li>

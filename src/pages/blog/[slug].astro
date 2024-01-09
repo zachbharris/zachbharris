@@ -23,12 +23,13 @@ const formattedPublishDate = new Date(publishDate).toLocaleDateString('en-US', {
 
 <BaseLayout pageTitle={title} description={description} hideTitle>
   <div class="flex flex-col gap-4">
+    <a href="/blog">All Posts</a>
     <div>
       <h1 class="text-bold text-2xl text-neutral-100">{title}</h1>
       <span class="text-sm">{formattedPublishDate} ~ {readingTime}</span>
     </div>
 
-    <div>
+    <div class="flex flex-col gap-2 text-neutral-100">
       <Content />
     </div>
   </div>
