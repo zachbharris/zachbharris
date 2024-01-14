@@ -1,97 +1,16 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import BlogPosts from "@/components/BlogPosts.astro";
-import Projects from "@/components/Projects.astro";
-import Mentions from "@/components/Mentions.astro";
-
-const heroText =
-  "I'm Zach Harris, a software engineer by day, keyboard builder by night, and brewing fresh coffee all the time. Proud dad to a dog and cat who don't care about my React skills.";
+import { getCollection } from "astro:content";
+const posts = await getCollection("posts");
 ---
 
 <BaseLayout
   pageTitle="zachbharris"
   description="Full Stack Engineer from St. Louis, blending expertise in JavaScript, React, and Node.js with a love for custom mechanical keyboards, coffee brewing, and family time with pets."
 >
-  <section class="flex flex-col gap-4">
-    <h1 class="font-bold text-2xl text-neutral-100"># Hello World</h1>
-    <p
-      aria-label={heroText}
-      id="text-container"
-      class="text-decipher max-w-full text-balance break-all block"
-    >
-      {heroText}
-    </p>
-  </section>
-
-  <section class="flex flex-col gap-4">
-    <h1 class="font-bold text-2xl text-neutral-100"># Projects</h1>
-
-    <Projects />
-  </section>
-
-  <section class="flex flex-col gap-4">
-    <h1 class="font-bold text-2xl text-neutral-100"># Blog</h1>
-    <BlogPosts />
-  </section>
-
-  <section class="flex flex-col gap-4">
-    <h1 class="font-bold text-2xl text-neutral-100"># Mentions</h1>
-    <Mentions />
-  </section>
+  {
+    posts.map((p) => {
+      return <a href={`/blog/${p.slug}`}>{p.data.title}</a>;
+    })
+  }
 </BaseLayout>
-
-<script>
-  import { hasDecryptedText } from "@/store";
-  import { decryptText } from "@/utils/decryptText";
-  const finalText =
-    "I'm Zach Harris, a software engineer by day, keyboard builder by night, and brewing fresh coffee all the time. Proud dad to a dog and cat who don't care about my React skills.";
-
-  hasDecryptedText.subscribe((value) => {
-    console.log(value)
-    if (value) {
-      // do nothing
-    } else {
-      hasDecryptedText.set(true);
-      window.addEventListener("DOMContentLoaded", () => {
-        window.requestAnimationFrame(() =>
-          decryptText("text-container", finalText),
-        );
-      });
-    }
-  });
-</script>
-
-<script>
-  // Define the sequence of the Konami Code
-  const konamiCode = [
-    "ArrowUp",
-    "ArrowUp",
-    "ArrowDown",
-    "ArrowDown",
-    "ArrowLeft",
-    "ArrowRight",
-    "ArrowLeft",
-    "ArrowRight",
-    "b",
-    "a",
-  ];
-  let current = 0;
-
-  // Add an event listener for keydown events
-  document.addEventListener("keydown", (event) => {
-    // Check if the current key matches the next key in the Konami Code
-    if (event.key === konamiCode[current]) {
-      // Move to the next key in the sequence
-      current++;
-
-      // Check if the entire sequence is complete
-      if (current === konamiCode.length) {
-        alert("Konami Code entered!");
-        current = 0; // Reset the sequence
-      }
-    } else {
-      // Reset the sequence if a wrong key is pressed
-      current = 0;
-    }
-  });
-</script>
