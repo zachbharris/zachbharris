@@ -6,5 +6,9 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx()],
+  integrations: [tailwind({ applyBaseStyles: false }), react(), mdx()],
+  image: {
+    domains: ["github.com"],
+    remotePatterns: [{ protocol: "https" }],
+  },
 });

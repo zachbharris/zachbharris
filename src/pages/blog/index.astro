@@ -1,25 +1,8 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import PostItem from "@/components/PostItem.astro";
-import getPostData from "@/utils/getPostData";
-
-const posts = await Astro.glob("../../data/posts/*.md").then((files) => {
-  return files.map((p: any) => {
-    const { readingTime } = getPostData(p);
-    return {
-      ...p,
-      readingTime,
-    };
-  });
-});
 ---
 
 <BaseLayout pageTitle="Blog" hideTitle>
   <ul class="flex flex-col gap-4">
-    {
-      posts.map((post) => {
-        return <PostItem post={post} />;
-      })
-    }
   </ul>
 </BaseLayout>
