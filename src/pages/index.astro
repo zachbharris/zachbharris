@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Navbar from "@/components/Navbar.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts");
@@ -10,9 +9,12 @@ const posts = await getCollection("posts");
   pageTitle="zachbharris"
   description="Full Stack Engineer from St. Louis, blending expertise in JavaScript, React, and Node.js with a love for custom mechanical keyboards, coffee brewing, and family time with pets."
 >
-  {
-    posts.map((p) => {
-      return <a href={`/blog/${p.slug}`}>{p.data.title}</a>;
-    })
-  }
+  <main class="p-4">
+
+    {
+      posts.map((p) => {
+        return <a href={`/blog/${p.slug}`}>{p.data.title}</a>;
+      })
+    }
+  </main>
 </BaseLayout>

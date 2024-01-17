@@ -11,7 +11,7 @@ const NavbarURLContext = createContext<URL>(null!);
 
 export default function Navbar({ url }: NavbarProps) {
   return (
-    <header className="w-full lg:w-64 border-b lg:border-b-0 lg:border-r border-border lg:h-screen flex flex-col gap-4 p-4">
+    <header className="w-full lg:w-64 xl:w-80 border-b lg:border-b-0 lg:border-r border-border lg:h-screen flex flex-col gap-4 p-4">
       <section className="flex flex-row gap-4 items-center">
         <ProfilePhoto className="lg:block hidden" />
         <span className="hidden lg:flex flex-col">
@@ -20,13 +20,15 @@ export default function Navbar({ url }: NavbarProps) {
             Software Engineer
           </span>
         </span>
-        <a href="/" className="flex lg:hidden font-bold">zachbharris</a>
+        <a href="/" className="flex lg:hidden font-bold">
+          zachbharris
+        </a>
       </section>
 
       <hr className="border-border lg:block hidden" />
 
-      <section className="lg:flex flex-col gap-2 hidden">
-        <NavbarURLContext.Provider value={url}>
+      <NavbarURLContext.Provider value={url}>
+        <nav className="lg:flex flex-col gap-2 hidden" aria-label="Main">
           <NavbarLink href="/" title="Home" icon="/icons/command.svg" />
           <NavbarLink href="/blog" title="Blog" icon="/icons/pen-line.svg" />
           <NavbarLink
@@ -39,8 +41,8 @@ export default function Navbar({ url }: NavbarProps) {
             title="Keyboards"
             icon="/icons/keyboard.svg"
           />
-        </NavbarURLContext.Provider>
-      </section>
+        </nav>
+      </NavbarURLContext.Provider>
 
       <hr className="border-border lg:block hidden" />
 
@@ -68,10 +70,13 @@ type NavbarLinkProps = {
 
 function NavbarLink({ href, title, icon }: NavbarLinkProps) {
   const url = useContext(NavbarURLContext);
-  const isActive = url.pathname === href;
+
+  const slug = href.slice(1);
+  const pathnameSlug = url.pathname.split("/")[1];
+  const isActive = slug === pathnameSlug;
 
   return (
-    <Button asChild variant={isActive ? "secondary" : "ghost"} role="menuitem">
+    <Button asChild variant={isActive ? "secondary" : "ghost"}>
       <a href={href} className="flex flex-row gap-2 items-center">
         <span
           role="img"

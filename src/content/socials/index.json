@@ -15,6 +15,16 @@
     "icon": "/icons/linkedin.svg"
   },
   {
+    "name": "YouTube",
+    "url": "https://youtube.com/@zachbharris",
+    "icon": "/icons/youtube.svg"
+  },
+  {
+    "name": "Twitch",
+    "url": "https://twitch.tv/trobleton",
+    "icon": "/icons/twitch.svg"
+  },
+  {
     "name": "Cal",
     "url": "https://cal.com/zachbharris/15min",
     "icon": "/icons/calendar.svg"

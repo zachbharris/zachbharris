@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import { BlogList } from "@/components/BlogList";
+const posts = await getCollection("posts");
+
+const className = Astro.props.class;
+---
+
+<aside
+  class:list={[
+    "w-80 border-r border-border h-screen overflow-y-hidden",
+    className,
+  ]}
+>
+  <div
+    class="px-4 py-2 border-b border-border flex flex-row gap-2 items-center"
+  >
+    <span class="font-bold">Posts</span>
+  </div>
+
+  <section class="p-2 flex flex-col gap-2">
+    <BlogList client:load url={Astro.url} posts={posts} />
+  </section>
+</aside>
