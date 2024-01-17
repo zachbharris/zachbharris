@@ -39,28 +39,17 @@ const keyboardCollection = defineCollection({
     keycapsURL: z.string(),
     switches: z.string(),
     switchesURL: z.string(),
-    pcb: z.string().nullable(),
-    pcbURL: z.string().nullable(),
-    plate: z.string().nullable(),
-    plateURL: z.string().nullable(),
-    stabs: z.string().nullable(),
-    stabsURL: z.string().nullable(),
+    pcb: z.string().optional(),
+    pcbURL: z.string().optional(),
+    plate: z.string().optional(),
+    plateURL: z.string().optional(),
+    stabs: z.string().optional(),
+    stabsURL: z.string().optional(),
   }),
-});
-
-const socialsCollection = defineCollection({
-  type: "data",
-  schema: z.array(
-    z.object({
-      name: z.string(),
-      url: z.string(),
-    }),
-  ),
 });
 
 export const collections = {
   posts: postsCollection,
   projects: projectsCollection,
   keyboards: keyboardCollection,
-  socials: socialsCollection,
 };
