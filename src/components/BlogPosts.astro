@@ -1,24 +1,40 @@
 ---
 import { getCollection } from "astro:content";
-import { BlogList } from "@/components/BlogList";
+import { formatDate } from "@/lib/post";
 const posts = await getCollection("posts");
 
 const className = Astro.props.class;
 ---
 
 <aside
-  class:list={[
-    "w-80 border-r border-border h-screen overflow-y-hidden",
-    className,
-  ]}
+  class:list={["w-80 border-r lg:h-screen lg:overflow-y-hidden", className]}
 >
-  <div
-    class="px-4 py-2 border-b border-border flex flex-row gap-2 items-center"
-  >
+  <div class="px-4 py-2 border-b flex flex-row gap-2 items-center">
     <span class="font-bold">Posts</span>
   </div>
 
   <section class="p-2 flex flex-col gap-2">
-    <BlogList client:load url={Astro.url} posts={posts} />
+    {
+      posts.map((post) => {
+        const pageSlug = Astro.url.pathname.split("/")[2];
+        const isActive = pageSlug === post.slug;
+
+        const date = formatDate(post.data.pubDate);
+
+        return (
+          <a
+            href={`/blog/${post.slug}`}
+            class:list={[
+              "flex flex-col p-2 rounded-lg",
+              "hover:bg-accent transition-colors",
+              isActive ? "bg-accent" : undefined,
+            ]}
+          >
+            <span class="text-md font-bold">{post.data.title}</span>
+            <span class="text-muted-foreground">{date}</span>
+          </a>
+        );
+      })
+    }
   </section>
 </aside>

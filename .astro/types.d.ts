@@ -201,6 +201,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "posts": {
+"astro-dark-mode.mdx": {
+	id: "astro-dark-mode.mdx";
+  slug: "astro-dark-mode";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdx"] };
 "hello-world.mdx": {
 	id: "hello-world.mdx";
   slug: "hello-world";

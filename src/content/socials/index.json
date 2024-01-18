@@ -25,6 +25,16 @@
     "icon": "/icons/twitch.svg"
   },
   {
+    "name": "TikTok",
+    "url": "https://tiktok.com/@zachbharris",
+    "icon": "/icons/tiktok.svg"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://instagram.com/zachbharris",
+    "icon": "/icons/instagram.svg"
+  },
+  {
     "name": "Cal",
     "url": "https://cal.com/zachbharris/15min",
     "icon": "/icons/calendar.svg"
