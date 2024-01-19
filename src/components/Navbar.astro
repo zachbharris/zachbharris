@@ -23,14 +23,14 @@ const pages: {
   },
   {
     name: "Keyboards",
-    href: "/keyboards",
+    href: "/keebs",
     iconPath: "/icons/keyboard.svg",
   },
 ];
 ---
 
 <header
-  class="flex flex-row lg:flex-col gap-2 border-b lg:border-b-0 lg:border-r lg:w-64 lg:overflow-y-auto lg:h-screen"
+  class="bg-background flex flex-row lg:flex-col gap-2 border-b lg:border-b-0 lg:border-r lg:w-64 lg:flex-shrink-0 lg:overflow-y-auto lg:h-screen"
 >
   <section class="p-2 hidden lg:block">
     <a
@@ -82,7 +82,7 @@ const pages: {
                   maskPosition: "center",
                 }}
               />
-              <span class="flex-1">{page.name}</span>
+              <span class="flex-1 text-sm font-medium">{page.name}</span>
             </a>
           );
         })
@@ -93,7 +93,6 @@ const pages: {
   <hr class="hidden lg:block" />
 
   <section class="p-2 hidden lg:flex flex-col gap-2">
-    <span class="text-xs font-bold uppercase text-muted-foreground">socials</span>
     {
       socials.map((social) => {
         return (
@@ -113,7 +112,7 @@ const pages: {
                 maskPosition: "center",
               }}
             />
-            <span class="flex-1">{social.name}</span>
+            <span class="flex-1 text-sm font-medium">{social.name}</span>
             <span
               role="img"
               class="h-4 w-4 bg-primary/75"

@@ -9,12 +9,18 @@ const posts = await getCollection("posts");
   pageTitle="zachbharris"
   description="Full Stack Engineer from St. Louis, blending expertise in JavaScript, React, and Node.js with a love for custom mechanical keyboards, coffee brewing, and family time with pets."
 >
-  <main class="p-4">
-
-    {
-      posts.map((p) => {
-        return <a href={`/blog/${p.slug}`}>{p.data.title}</a>;
-      })
-    }
-  </main>
+  <div
+    class:list={[
+      "w-full",
+      "bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]",
+    ]}
+  >
+    <main class="p-4 pt-16 w-full lg:max-w-screen-md lg:mx-auto">
+      <p class="leading-6 text-balance">
+        Hey, I'm Zach 👋 Software Engineer by day, keyboard builder by night, and coffee
+        connoisseur all the time. Proud dad to a dog and cat who don't care
+        about my React skills.
+      </p>
+    </main>
+  </div>
 </BaseLayout>
