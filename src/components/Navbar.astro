@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import socials from "@/content/socials/index.json";
+import Icon from "@/components/Icon.astro"
 const pages: {
   name: string;
   href: string;
@@ -68,20 +69,11 @@ const pages: {
             <a
               href={page.href}
               class:list={[
-                "flex flex-row gap-2 items-center p-2 hover:bg-accent transition-colors rounded-lg",
+                "flex flex-row gap-2 items-center p-2 hover:bg-accent/50 transition-colors rounded-lg",
                 isActive ? "bg-accent" : undefined,
               ]}
             >
-              <span
-                role="img"
-                class="h-4 w-4 bg-primary"
-                style={{
-                  maskImage: `url(${page.iconPath})`,
-                  maskSize: "contain",
-                  maskRepeat: "no-repeat",
-                  maskPosition: "center",
-                }}
-              />
+              <Icon iconPath={page.iconPath} />
               <span class="flex-1 text-sm font-medium">{page.name}</span>
             </a>
           );
@@ -100,29 +92,11 @@ const pages: {
             href={social.url}
             rel="noopener noreferrer"
             target="_blank"
-            class="flex flex-row gap-2 items-center p-2 hover:bg-accent transition-colors rounded-lg"
+            class="flex flex-row gap-2 items-center p-2 hover:bg-accent/50 transition-colors rounded-lg"
           >
-            <span
-              role="img"
-              class="h-4 w-4 bg-primary"
-              style={{
-                maskImage: `url(${social.icon})`,
-                maskSize: "contain",
-                maskRepeat: "no-repeat",
-                maskPosition: "center",
-              }}
-            />
+            <Icon iconPath={social.icon} />
             <span class="flex-1 text-sm font-medium">{social.name}</span>
-            <span
-              role="img"
-              class="h-4 w-4 bg-primary/75"
-              style={{
-                maskImage: `url("/icons/arrow-up-right.svg")`,
-                maskSize: "contain",
-                maskRepeat: "no-repeat",
-                maskPosition: "center",
-              }}
-            />
+            <Icon iconPath="/icons/arrow-up-right.svg" className="bg-secondary-foreground" />
           </a>
         );
       })
