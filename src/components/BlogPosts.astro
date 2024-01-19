@@ -30,8 +30,8 @@ const className = Astro.props.class;
               isActive ? "bg-accent" : undefined,
             ]}
           >
-            <span class="text-md font-bold">{post.data.title}</span>
-            <span class="text-muted-foreground">{date}</span>
+            <span class="font-medium">{post.data.title}</span>
+            <span class="text-sm text-muted-foreground">{date}</span>
           </a>
         );
       })
