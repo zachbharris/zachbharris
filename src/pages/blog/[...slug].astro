@@ -1,9 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import BlogPosts from "@/components/BlogPosts.astro";
-import Paragraph from "@/components/markdown/Paragraph.astro";
-import Icon from "@/components/Icon.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("posts");
@@ -14,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content, components } = await entry.render();
+const { Content } = await entry.render();
 
 const date = new Intl.DateTimeFormat("en-US", {
   dateStyle: "long",
@@ -26,13 +23,11 @@ const date = new Intl.DateTimeFormat("en-US", {
   description={entry.data.description}
   hideTitle
 >
-  <BlogPosts class="hidden lg:block" />
   <main class="p-4 flex flex-col gap-4 flex-grow">
     <a
       href="/blog"
       class="lg:hidden font-medium text-sm flex flex-row gap-2 items-center"
     >
-      <Icon iconPath="/icons/arrow-left.svg" />
       <span>View All Posts</span>
     </a>
     <section class="flex flex-col gap-0">
@@ -41,7 +36,7 @@ const date = new Intl.DateTimeFormat("en-US", {
     </section>
 
     <section>
-      <Content components={{ ...components, p: Paragraph }} />
+      <Content />
     </section>
   </main>
 </BaseLayout>

@@ -1,27 +1,31 @@
 ---
-import "@/styles/fonts.css";
-import Navbar from "@/components/Navbar.astro";
-import Footer from "@/components/Footer.astro";
-const { pageTitle, description } = Astro.props;
+interface Props {
+  meta: {
+    title?: string;
+    description: string;
+  };
+}
+
 import "@/styles/globals.css";
+import Navbar from "@/components/Navbar.astro";
 import { ViewTransitions } from "astro:transitions";
+
+const { meta } = Astro.props;
+const { title = "Zach Harris" } = meta;
 ---
 
 <html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <title>{pageTitle}</title>
+    <meta name="description" content={meta.description} />
+    <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body
-    class="relative overflow-hidden min-h-screen flex flex-col lg:flex-row selection:bg-accent"
-  >
+  <body class="bg-background">
     <Navbar />
     <slot />
-    <Footer />
   </body>
 </html>
