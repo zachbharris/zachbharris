@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { getCollection } from "astro:content";
+const notes = await getCollection("posts");
 ---
 
 <BaseLayout
@@ -8,5 +11,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     description: "A collection of notes from the mind of Zach Harris.",
   }}
 >
-  <p>A list will go here...</p>
+  <p>Notes</p>
+
+  <ul>
+    {notes.map((note) => <a href={`/notes/${note.slug}`}>{note.data.title}</a>)}
+  </ul>
 </BaseLayout>
