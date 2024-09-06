@@ -24,8 +24,11 @@ const { title = "Zach Harris" } = meta;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-background">
+  <body class="bg-background text-foreground">
     <Navbar />
-    <slot />
+
+    <main class="max-w-screen-sm mx-auto">
+      <slot />
+    </main>
   </body>
 </html>
