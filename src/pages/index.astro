@@ -1,16 +1,19 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Button } from "@/components/ui/button.tsx";
 ---
 
 <BaseLayout
   meta={{
     title: "Zach Harris",
-    description: "Dev. Keyboards. Coffee.",
+    description: "Dev. Keybofrds. Coffee.",
   }}
 >
-  <p class="tracking-wide text-2xl leading-relaxed">
+  <p class="text-2xl leading-relaxed tracking-wide">
     Hey, I'm Zach Harris! I'm a Software Engineer who loves working on Frontend
     Development. Right now, I'm helping build Moment on the Platform team, where
     I focus on creating smooth, user-friendly experiences.
   </p>
+
+  <Button>Hello</Button>
 </BaseLayout>

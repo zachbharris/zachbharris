@@ -1,8 +1,13 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { notesInYearOrder } from "@/lib/post.ts";
+
+type Note = CollectionEntry<"posts">;
 
 import { getCollection } from "astro:content";
-const notes = await getCollection("posts");
+const notes: Note[] = await getCollection("posts");
+const notesByYear = notesInYearOrder(notes);
 ---
 
 <BaseLayout
@@ -11,9 +16,24 @@ const notes = await getCollection("posts");
     description: "A collection of notes from the mind of Zach Harris.",
   }}
 >
-  <p>Notes</p>
+  <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    Notes
+  </h1>
 
   <ul>
-    {notes.map((note) => <a href={`/notes/${note.slug}`}>{note.data.title}</a>)}
+    {
+      notesByYear.map((time) => (
+        <li>
+          <h2>{time.year}</h2>
+          <ul>
+            {time.notes.map((note) => (
+              <li>
+                <a href={`/notes/${note.slug}`}>{note.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
   </ul>
 </BaseLayout>
