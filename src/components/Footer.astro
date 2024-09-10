@@ -21,11 +21,6 @@ const links: { href: string; label: string; Icon: Icon }[] = [
     Icon: LinkedinLogo,
   },
   {
-    href: "https://instagram.com/zachbharris",
-    label: "Instagram",
-    Icon: InstagramLogo,
-  },
-  {
     href: "https://github.com/zachbharris",
     label: "GitHub",
     Icon: GithubLogo,
@@ -35,7 +30,7 @@ const links: { href: string; label: string; Icon: Icon }[] = [
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="mx-auto mt-auto flex w-full flex-row px-4 py-8">
+<footer class="mx-auto mt-auto flex w-full flex-row items-center py-8">
   <div class="flex grow flex-row gap-4">
     {
       links.map(({ href, label, Icon }) => (
@@ -47,7 +42,7 @@ const currentYear = new Date().getFullYear();
     }
   </div>
 
-  <span>
+  <span class="text-muted-foreground md:order-none">
     © {currentYear}
   </span>
 </footer>

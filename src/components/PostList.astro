@@ -5,8 +5,6 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 const posts = await getCollection("posts", ({ data }) => !data.draft);
 const postsSortedByYear = postsInYearOrder(posts);
-
-console.log(JSON.stringify(postsSortedByYear, null, 2));
 ---
 
 {
