@@ -1,43 +1,18 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-
-export async function getStaticPaths() {
-  const blogEntries = await getCollection("posts");
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
+import BaseLayout from "@/layouts/BaseLayout.astro";
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post.data,
   }));
-}
+}) satisfies GetStaticPaths;
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
-
-const date = new Intl.DateTimeFormat("en-US", {
-  dateStyle: "long",
-}).format(new Date(entry.data.published_date));
+const { title, description } = Astro.props;
 ---
 
-<BaseLayout
-  meta={{
-    title: entry.data.title,
-    description: entry.data.description,
-  }}
->
-  <main class="p-4 flex flex-col gap-4 flex-grow">
-    <a
-      href="/blog"
-      class="lg:hidden font-medium text-sm flex flex-row gap-2 items-center"
-    >
-      <span>View All Posts</span>
-    </a>
-    <section class="flex flex-col gap-0">
-      <h1 class="text-4xl font-bold">{entry.data.title}</h1>
-      <span class="text-muted-foreground">{date}</span>
-    </section>
-
-    <section>
-      <Content />
-    </section>
-  </main>
+<BaseLayout meta={{ title, description }}>
+  <p>{title}</p>
 </BaseLayout>

@@ -1,0 +1,53 @@
+---
+import {
+  XLogo,
+  LinkedinLogo,
+  InstagramLogo,
+  GithubLogo,
+  type Icon,
+} from "@phosphor-icons/react";
+
+import SocialLink from "@/components/SocialLink.astro";
+
+const links: { href: string; label: string; Icon: Icon }[] = [
+  {
+    href: "https://twitter.com/zachbharris",
+    label: "Twitter",
+    Icon: XLogo,
+  },
+  {
+    href: "https://linkedin.com/in/zachbharris",
+    label: "LinkedIn",
+    Icon: LinkedinLogo,
+  },
+  {
+    href: "https://instagram.com/zachbharris",
+    label: "Instagram",
+    Icon: InstagramLogo,
+  },
+  {
+    href: "https://github.com/zachbharris",
+    label: "GitHub",
+    Icon: GithubLogo,
+  },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mx-auto mt-auto flex w-full flex-row px-4 py-8">
+  <div class="flex grow flex-row gap-4">
+    {
+      links.map(({ href, label, Icon }) => (
+        <SocialLink href={href}>
+          <Icon />
+          <span>{label}</span>
+        </SocialLink>
+      ))
+    }
+  </div>
+
+  <span>
+    © {currentYear}
+  </span>
+</footer>

@@ -1,0 +1,33 @@
+---
+import type { MarkdownHeading } from "astro";
+import { generateToc } from "@/lib/post.ts";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+const toc = generateToc(headings);
+---
+
+<nav>
+  <ul>
+    {
+      toc.map((entry) => (
+        <li>
+          <a href={`#${entry.slug}`}>{entry.text}</a>
+          {entry.children && (
+            <ul>
+              {entry.children.map((child) => (
+                <li>
+                  <a href={`#${child.slug}`}>{child.text}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</nav>

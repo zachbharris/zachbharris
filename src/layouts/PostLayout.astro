@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+
+type Post = CollectionEntry<"posts">;
+interface Props {
+  frontmatter: Post["data"];
+  headings?: MarkdownHeading[];
+}
+
+import BaseLayout from "./BaseLayout.astro";
+import TableOfContents from "@/components/TableOfContents.astro";
+const { frontmatter, headings } = Astro.props;
+---
+
+<BaseLayout
+  meta={{ title: frontmatter.title, description: frontmatter.description }}
+>
+  <h1>{frontmatter.title}</h1>
+  {headings && <TableOfContents headings={headings} />}
+  <slot />
+</BaseLayout>
