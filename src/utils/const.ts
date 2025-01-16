@@ -34,12 +34,6 @@ export const spaces: Space[] = [
     href: "https://linkedin.com/in/zachbharris",
     handle: "/in/zachbharris",
   },
-  {
-    title: "Twitch",
-    icon: "twitch",
-    href: "https://twitch.tv/Trobleton",
-    handle: "@Trobleton",
-  },
 ];
 
 type Project = {
