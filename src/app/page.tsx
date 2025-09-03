@@ -45,10 +45,46 @@ export default function Page() {
         </ul>
       </section>
 
-      <section>
+      <section className="space-y-2">
         <Text variant="h2" className="">
           Keyboards
         </Text>
+
+        <ul className="grid grid-cols-1 gap-2">
+          <li>
+            <KeyboardCard
+              title="MetaVerse HHKB"
+              description="GMK MetaVerse R2, Zilent, Tokyo60"
+              image="/images/thumbnails/metaverse-hhkb-thumb.png"
+              link="/"
+            />
+          </li>
+          <li>
+            <KeyboardCard
+              title="Frost Witch NK65"
+              description="GMK Frost Witch, Holy Panda, NK65"
+              image="/images/thumbnails/frost-witch-NK65-thumb.png"
+              link="/"
+            />
+          </li>
+          <li>
+            <KeyboardCard
+              title="Seal KBD67"
+              description="PBT Seal, Gateron Black, KBD67"
+              image="/images/thumbnails/seal-KBD67-thumb.png"
+              link="/"
+            />
+          </li>
+
+          <li>
+            <KeyboardCard
+              title="Darling Corne"
+              description="GMK Darling, Gateron Black Ink, Corne Wireless"
+              image="/images/thumbnails/darling-corne-thumb.png"
+              link="/"
+            />
+          </li>
+        </ul>
       </section>
     </main>
   );
@@ -80,6 +116,42 @@ function ProjectCard({
           width={576}
           height={128}
           className="absolute flex-1 object-cover h-full right-0 top-0 mask-l-from-5%"
+        />
+      ) : null}
+    </Link>
+  );
+}
+
+function KeyboardCard({
+  title,
+  description,
+  link,
+  image,
+}: {
+  title: string;
+  description?: string;
+  link: string;
+  image?: string;
+}) {
+  return (
+    <Link
+      href={link}
+      className="relative flex justify-end h-48 overflow-hidden flex-col gap-1 p-2 md:p-4 bg-neutral-900 border border-neutral-700 rounded-xl w-full"
+    >
+      <span className="text-lg z-10">{title}</span>
+      {description ? (
+        <span className="text-xs text-muted-foreground z-10">
+          {description}
+        </span>
+      ) : null}
+
+      {image ? (
+        <Image
+          src={image}
+          alt={title}
+          width={576}
+          height={324}
+          className="absolute flex-1 object-cover h-full right-0 top-0 mask-radial-[85%_85%] mask-radial-from-25% mask-radial-at-right"
         />
       ) : null}
     </Link>
